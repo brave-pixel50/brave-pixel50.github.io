@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>86.6g印象足资源-足部影像资源整理与筛选</title>
+<meta name="description" content="86.6g印象足资源汇集足部影像与足型资料的整理方法、版本差异与筛选要点，覆盖足弓观察、鞋楦匹配、足部步态样本等内容，给出可核对的量测口径与使用边界。">
+<meta name="keywords" content="86.6g印象足资源">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f4d43'/%3E%3Cpath d='M20 44c0-10 4-16 10-19M28 44c0-8 3-12 8-15' stroke='%23d8c9a3' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cellipse cx='41' cy='26' rx='8' ry='6' fill='%23d8c9a3'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2523;
+  --ink-soft:#43514d;
+  --paper:#f5f3ec;
+  --card:#fffdf8;
+  --line:#d9d4c6;
+  --main:#1f4d43;
+  --main-deep:#14332d;
+  --accent:#a65b34;
+  --accent-soft:#f0e2d3;
+  --gold:#d8c9a3;
+  --radius:10px;
+  --radius-lg:16px;
+  --shadow:0 2px 10px rgba(28,37,35,.07);
+  --shadow-hover:0 6px 18px rgba(28,37,35,.12);
+  --space-1:6px;
+  --space-2:12px;
+  --space-3:20px;
+  --space-4:32px;
+  --space-5:52px;
+  --fs-xs:12px;
+  --fs-sm:14px;
+  --fs-base:16px;
+  --fs-lg:19px;
+  --fs-xl:24px;
+  --fs-2xl:32px;
+  --fs-3xl:42px;
+  --sticky-offset:118px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-offset)}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--paper);
+  font-size:var(--fs-base);line-height:1.85;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--main);text-decoration:none}
+a:hover{color:var(--accent)}
+h1,h2,h3,h4{margin:0;line-height:1.4;font-weight:700}
+p{margin:0 0 var(--space-2)}
+ul,ol{margin:0 0 var(--space-2);padding-left:1.3em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{width:min(1200px,94vw);margin:0 auto}
+
+/* ---------- 公告条 + 页头 吸顶 ---------- */
+.sticky-top{position:sticky;top:0;z-index:60}
+.notice{
+  background:var(--main-deep);color:#e9e3d2;font-size:var(--fs-sm);
+}
+.notice .wrap{display:flex;align-items:center;gap:var(--space-2);padding:7px 0;flex-wrap:wrap}
+.notice .tag{
+  background:var(--gold);color:var(--main-deep);font-weight:700;font-size:var(--fs-xs);
+  padding:1px 8px;border-radius:99px;letter-spacing:.5px;white-space:nowrap;
+}
+.notice strong{color:#fff;font-weight:600}
+.notice a{color:#f3d9b8;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.site-header{background:rgba(255,253,248,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.header-inner{display:flex;align-items:center;gap:var(--space-3);padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand svg{width:38px;height:38px;flex-shrink:0}
+.brand-text{font-size:var(--fs-lg);font-weight:800;letter-spacing:.5px;color:var(--main-deep);white-space:nowrap}
+.nav-main{margin-left:auto}
+.nav-main ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav-main a{
+  display:block;padding:6px 10px;font-size:var(--fs-sm);color:var(--ink-soft);
+  border-radius:8px;transition:background .18s,color .18s;
+}
+.nav-main a:hover,.nav-main a.active{background:var(--accent-soft);color:var(--main-deep)}
+.menu-toggle{
+  display:none;margin-left:auto;background:var(--card);border:1px solid var(--line);
+  border-radius:8px;padding:7px 12px;font-size:var(--fs-sm);font-weight:600;
+  color:var(--main-deep);cursor:pointer;font-family:inherit;
+}
+.search-box{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.search-box input{
+  width:150px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;
+  font-family:inherit;font-size:var(--fs-sm);background:var(--card);color:var(--ink);
+}
+.search-box input:focus{border-color:var(--main);outline:none;box-shadow:0 0 0 3px rgba(31,77,67,.15)}
+.search-box button{
+  padding:7px 12px;border:1px solid var(--main);background:var(--main);color:#fff;
+  border-radius:8px;font-family:inherit;font-size:var(--fs-sm);cursor:pointer;
+}
+.search-box button:hover{background:var(--main-deep)}
+.search-feedback{
+  display:none;position:absolute;left:0;right:0;top:100%;background:var(--card);
+  border:1px solid var(--line);border-radius:0 0 var(--radius) var(--radius);
+  padding:10px 16px;font-size:var(--fs-sm);color:var(--accent);box-shadow:var(--shadow);z-index:70;
+}
+.has-feedback{position:relative}
+@media(max-width:980px){
+  .menu-toggle{display:inline-block}
+  .nav-main{
+    display:none;position:absolute;left:0;right:0;top:100%;background:var(--card);
+    border-bottom:1px solid var(--line);box-shadow:var(--shadow);padding:10px 0;margin:0;
+  }
+  .nav-main.open{display:block}
+  .nav-main ul{flex-direction:column;gap:0;padding:0 16px}
+  .nav-main a{padding:10px 6px;border-radius:6px}
+  .search-box{margin-left:8px}
+  .search-box input{width:110px}
+  .header-inner{flex-wrap:wrap}
+}
+@media(max-width:600px){
+  .search-box{order:5;margin:8px 0 0;width:100%}
+  .search-box input{flex:1;width:auto}
+  .header-inner{padding:10px 0 0}
+}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;background:
+    radial-gradient(1100px 420px at 82% -12%, rgba(216,201,163,.45), transparent 62%),
+    linear-gradient(160deg,#f8f5ec 0%,#eeebe0 58%,#e6ecdf 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-4);padding:var(--space-5) 0;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-sm);font-weight:700;
+  color:var(--main-deep);background:rgba(216,201,163,.6);padding:4px 12px;border-radius:99px;margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.hero h1{font-size:var(--fs-3xl);letter-spacing:1px;color:var(--main-deep);margin-bottom:14px}
+.hero-lead{font-size:var(--fs-lg);color:var(--ink-soft);max-width:34em;margin-bottom:6px}
+.hero-sub{font-size:var(--fs-sm);color:var(--ink-soft);margin-bottom:22px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:11px 22px;border-radius:99px;font-weight:700;font-size:var(--fs-sm);
+  transition:transform .18s,background .18s,box-shadow .18s;border:1px solid transparent;
+}
+.btn-primary{background:var(--main);color:#fff;box-shadow:var(--shadow)}
+.btn-primary:hover{background:var(--main-deep);color:#fff;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--main-deep);border-color:var(--main)}
+.btn-ghost:hover{background:rgba(31,77,67,.08);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.hero-stats div{font-size:var(--fs-sm);color:var(--ink-soft)}
+.hero-stats b{display:block;font-size:var(--fs-xl);color:var(--main-deep);line-height:1.2}
+.hero-art{position:relative;min-height:330px}
+.hero-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 10px 22px rgba(31,77,67,.16))}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding:var(--space-4) 0}
+  .hero h1{font-size:var(--fs-2xl)}
+  .hero-art{order:-1;min-height:0;max-width:420px}
+}
+
+/* ---------- 主内容三栏门户 ---------- */
+.layout{display:grid;grid-template-columns:210px minmax(0,1fr) 300px;gap:var(--space-4);padding:var(--space-4) 0 var(--space-5)}
+.side-nav{position:sticky;top:calc(var(--sticky-offset) + 16px);align-self:start;font-size:var(--fs-sm)}
+.side-nav h2{font-size:var(--fs-sm);color:var(--ink-soft);letter-spacing:1px;margin-bottom:10px;font-weight:700}
+.side-nav ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.side-nav li a{
+  display:block;padding:6px 12px;color:var(--ink-soft);border-left:2px solid transparent;
+  margin-left:-2px;transition:color .18s,border-color .18s,background .18s;
+}
+.side-nav li a:hover{color:var(--main-deep);background:rgba(216,201,163,.22)}
+.side-nav li a.active{color:var(--main-deep);border-left-color:var(--accent);font-weight:700;background:rgba(216,201,163,.28)}
+.side-nav .side-note{font-size:var(--fs-xs);color:var(--ink-soft);padding:10px 12px 0;line-height:1.7}
+
+.section{margin-bottom:var(--space-5);scroll-margin-top:var(--sticky-offset)}
+.section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:var(--space-3);flex-wrap:wrap}
+.section-head h2{font-size:var(--fs-xl);color:var(--main-deep)}
+.section-head .kicker{font-size:var(--fs-sm);color:var(--accent);font-weight:700}
+.section-head p{margin:0;font-size:var(--fs-sm);color:var(--ink-soft);flex:1 1 100%}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--space-3);box-shadow:var(--shadow)}
+
+/* 概览指标 */
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2)}
+.metric{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.metric b{display:block;font-size:var(--fs-xl);color:var(--main);line-height:1.25}
+.metric span{font-size:var(--fs-xs);color:var(--ink-soft)}
+@media(max-width:520px){.metrics{grid-template-columns:1fr 1fr}}
+
+/* 精选卡片网格 */
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3)}
+.grid-cards .card{display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.grid-cards .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.card h3{font-size:var(--fs-base);margin-bottom:8px}
+.card h3 a{color:var(--main-deep)}
+.card p{font-size:var(--fs-sm);color:var(--ink-soft);margin-bottom:10px}
+.card .meta{font-size:var(--fs-xs);color:var(--ink-soft);margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.pill{
+  display:inline-block;font-size:var(--fs-xs);padding:2px 9px;border-radius:99px;
+  background:var(--accent-soft);color:var(--accent);font-weight:600;margin-bottom:8px;align-self:flex-start;
+}
+@media(max-width:900px){.grid-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-cards{grid-template-columns:1fr}}
+
+/* 最新更新：紧凑列表 */
+.list-compact{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--card)}
+.list-compact li{display:flex;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line);font-size:var(--fs-sm);align-items:flex-start;list-style:none}
+.list-compact li:last-child{border-bottom:0}
+.list-compact time{color:var(--accent);font-weight:700;flex-shrink:0;font-variant-numeric:tabular-nums;width:52px}
+.list-compact span{color:var(--ink-soft)}
+.list-compact a{font-weight:600}
+.list-compact ul{margin:0;padding:0}
+
+/* 分类入口 标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:10px}
+.tag-index a{
+  display:inline-block;padding:8px 16px;border:1px solid var(--line);border-radius:99px;
+  background:var(--card);font-size:var(--fs-sm);font-weight:600;color:var(--main-deep);
+  transition:background .18s,border-color .18s,transform .18s;
+}
+.tag-index a:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+.tag-index small{display:block;font-weight:400;color:var(--ink-soft);font-size:var(--fs-xs)}
+
+/* 深度解析 */
+.article-main{max-width:none}
+.article-main h2{font-size:var(--fs-2xl);margin-bottom:6px}
+.article-main .dateline{font-size:var(--fs-sm);color:var(--ink-soft);margin-bottom:var(--space-3);padding-bottom:var(--space-2);border-bottom:1px dashed var(--line)}
+.article-main h3{font-size:var(--fs-lg);color:var(--main-deep);margin:var(--space-4) 0 var(--space-2)}
+.article-main p{color:var(--ink);line-height:1.95}
+.article-main figure{margin:var(--space-3) 0}
+.article-main figure img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;height:auto;object-fit:cover}
+.article-main figcaption{font-size:var(--fs-xs);color:var(--ink-soft);margin-top:8px;text-align:center}
+.callout{
+  background:linear-gradient(135deg,#f0f5ee,#eef1e6);border-left:4px solid var(--main);
+  border-radius:0 var(--radius) var(--radius) 0;padding:16px 18px;margin:var(--space-3) 0;font-size:var(--fs-sm);
+}
+.callout b{color:var(--main-deep)}
+.quote-card{
+  border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--card);
+  padding:18px 20px;margin:var(--space-3) 0;position:relative;
+}
+.quote-card::before{content:"“";position:absolute;left:14px;top:-8px;font-size:52px;color:var(--gold);font-family:Georgia,serif;line-height:1}
+.quote-card p{margin:0 0 8px;font-size:var(--fs-sm);padding-left:20px}
+.quote-card cite{font-size:var(--fs-xs);color:var(--ink-soft);font-style:normal;padding-left:20px;display:block}
+.compare{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:var(--space-3) 0;background:var(--card);border-radius:var(--radius);overflow:hidden}
+.compare caption{text-align:left;font-size:var(--fs-xs);color:var(--ink-soft);padding-bottom:6px}
+.compare th,.compare td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+.compare th{background:#eef1e6;color:var(--main-deep);font-weight:700;width:30%}
+.steps{counter-reset:step;list-style:none;padding:0;margin:var(--space-3) 0}
+.steps li{
+  position:relative;padding:0 0 16px 46px;border-left:2px solid var(--line);margin-left:14px;
+  font-size:var(--fs-sm);
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps li::before{
+  counter-increment:step;content:counter(step);position:absolute;left:-15px;top:-2px;
+  width:28px;height:28px;border-radius:50%;background:var(--main);color:#fff;
+  font-weight:700;font-size:var(--fs-sm);display:flex;align-items:center;justify-content:center;
+}
+.steps b{color:var(--main-deep)}
+
+/* FAQ */
+.faq details{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);margin-bottom:10px;overflow:hidden}
+.faq summary{
+  cursor:pointer;padding:13px 18px;font-weight:700;font-size:var(--fs-sm);color:var(--main-deep);
+  list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:20px;color:var(--accent);line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details[open] summary{background:rgba(216,201,163,.18)}
+.faq .ans{padding:2px 18px 16px;font-size:var(--fs-sm);color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:0}
+.faq .ans p{margin:10px 0 0}
+
+/* 评论 */
+.comments{display:grid;gap:var(--space-2)}
+.comment{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;font-size:var(--fs-sm)}
+.comment .who{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.avatar{width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--main-deep);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:var(--fs-sm);flex-shrink:0}
+.comment .who b{font-size:var(--fs-sm)}
+.comment .who time{font-size:var(--fs-xs);color:var(--ink-soft);margin-left:auto}
+.comment p{margin:0;color:var(--ink-soft)}
+.comment .ref{color:var(--accent);font-weight:600}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--gold);margin-left:8px}
+.timeline li{position:relative;padding:0 0 18px 22px;font-size:var(--fs-sm)}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--main);border:2px solid var(--paper)}
+.timeline time{display:block;font-weight:700;color:var(--accent);font-size:var(--fs-xs);margin-bottom:2px}
+
+/* 侧栏 */
+.aside-col{display:flex;flex-direction:column;gap:var(--space-3)}
+.aside-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow)}
+.aside-card h3{font-size:var(--fs-base);color:var(--main-deep);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.aside-card h3::before{content:"";width:4px;height:16px;background:var(--accent);border-radius:2px}
+.rank-list{list-style:none;margin:0;padding:0;counter-reset:rank}
+.rank-list li{counter-increment:rank;display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:var(--fs-sm);align-items:flex-start}
+.rank-list li:last-child{border-bottom:0}
+.rank-list li::before{content:counter(rank);font-weight:800;color:var(--accent);width:18px;flex-shrink:0;font-variant-numeric:tabular-nums}
+.rank-list small{display:block;color:var(--ink-soft);font-size:var(--fs-xs)}
+.mini-list{list-style:none;margin:0;padding:0;font-size:var(--fs-sm)}
+.mini-list li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.mini-list li:last-child{border-bottom:0}
+.mini-list a{display:flex;justify-content:space-between;gap:8px}
+.mini-list em{font-style:normal;color:var(--ink-soft);font-size:var(--fs-xs);flex-shrink:0}
+.reco-tags{display:flex;flex-wrap:wrap;gap:8px}
+.reco-tags a{font-size:var(--fs-xs);padding:4px 11px;border-radius:99px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+.reco-tags a:hover{background:var(--accent);color:#fff}
+
+@media(max-width:1080px){
+  .layout{grid-template-columns:minmax(0,1fr) 300px}
+  .side-nav{display:none}
+}
+@media(max-width:860px){
+  .layout{grid-template-columns:1fr;gap:var(--space-3);padding-top:var(--space-3)}
+  .aside-col{order:2}
+}
+
+/* 页尾 */
+.site-footer{background:var(--main-deep);color:#cfd8d2;padding:var(--space-5) 0 var(--space-3);font-size:var(--fs-sm)}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--space-4);padding-bottom:var(--space-4);border-bottom:1px solid rgba(216,201,163,.24)}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.footer-brand svg{width:34px;height:34px}
+.footer-brand b{color:#fff;font-size:var(--fs-lg);letter-spacing:.5px}
+.footer-top p{color:#a9b8b1;margin:0 0 10px;line-height:1.8}
+.footer-top h4{color:var(--gold);font-size:var(--fs-sm);margin-bottom:12px;letter-spacing:1px}
+.footer-top ul{list-style:none;margin:0;padding:0}
+.footer-top li{margin-bottom:8px}
+.footer-top a{color:#cfd8d2}
+.footer-top a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.footer-bottom{padding-top:var(--space-3);font-size:var(--fs-xs);color:#93a49c;line-height:2}
+.footer-bottom a{color:#c8b78f}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:24px;width:44px;height:44px;border-radius:50%;
+  background:var(--main);color:#fff;border:0;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:var(--shadow-hover);opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s,transform .2s,visibility .2s;z-index:80;font-size:18px;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--main-deep)}
+@media(max-width:600px){.to-top{right:14px;bottom:16px;width:40px;height:40px}}
+
+.mark{background:linear-gradient(transparent 62%,rgba(216,201,163,.65) 62%);padding:0 2px}
+.fact-chip{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-xs);background:#eef1e6;color:var(--main-deep);padding:2px 10px;border-radius:99px;font-weight:600}
+.note{font-size:var(--fs-xs);color:var(--ink-soft)}
+.hidden{display:none!important}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .grid-cards .card:hover,.btn:hover,.tag-index a:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="notice">
+    <div class="wrap">
+      <span class="tag">更新</span>
+      <span><strong>86.6g印象足资源</strong> 2026-11-06 归档「足弓承压样本 12 组」量测表，替换 10 月 21 日旧版中 3 处标尺刻度。</span>
+      <a href="/#latest">查看更新记录 →</a>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="wrap header-inner has-feedback">
+      <a class="brand" href="/#top" aria-label="86.6g印象足资源 首页">
+        <svg viewBox="0 0 64 64" role="img" aria-label="足印与量尺组合图形">
+          <rect width="64" height="64" rx="14" fill="#1f4d43"/>
+          <path d="M18 47c0-12 4.5-19 11-22" stroke="#d8c9a3" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+          <path d="M27 47c0-9 3-14 8.5-17" stroke="#d8c9a3" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="43" cy="25" rx="9" ry="6.5" fill="#d8c9a3"/>
+          <circle cx="49" cy="38" r="2.4" fill="#a65b34"/>
+          <circle cx="43" cy="41" r="2.4" fill="#a65b34"/>
+          <circle cx="37" cy="43" r="2.4" fill="#a65b34"/>
+        </svg>
+        <span class="brand-text">86.6g印象足资源</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNav" id="menuToggle">菜单 ▾</button>
+      <nav class="nav-main" id="mainNav" aria-label="主题导航">
+        <ul>
+          <li><a href="/#overview">资源概览</a></li>
+          <li><a href="/#featured">足型样本</a></li>
+          <li><a href="/#latest">更新记录</a></li>
+          <li><a href="/#analysis">深度解析</a></li>
+          <li><a href="/#guide">使用指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+        </ul>
+      </nav>
+      <div class="search-box">
+        <input type="search" id="siteSearch" placeholder="搜索条目…" aria-label="站内搜索">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+      <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">足部影像 · 量测口径 · 版本归档</span>
+        <h1 id="heroTitle">86.6g印象足资源</h1>
+        <p class="hero-lead">把足弓拍摄、足型描摹、鞋楦比对三类资料按同一套标尺整理，方便对照 2026 年秋季的样本口径。</p>
+        <p class="hero-sub">现有 9 个频道，收录 264 条带日期与出处的条目；量测表均标注相机高度、标尺编号与拍摄日期。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#featured">翻阅足型样本</a>
+          <a class="btn btn-ghost" href="/#analysis">读深度解析</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>264</b>条带出处条目</div>
+          <div><b>12</b>组足弓承压样本</div>
+          <div><b>2026-11-06</b>最近归档日期</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 340" role="img" aria-label="足印、标尺与承压曲线的抽象构图">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffffff" stop-opacity=".92"/>
+              <stop offset="1" stop-color="#e9e4d3" stop-opacity=".75"/>
+            </linearGradient>
+          </defs>
+          <rect x="18" y="26" width="384" height="288" rx="18" fill="url(#g1)" stroke="#cfc7b2"/>
+          <g stroke="#c9c2ae" stroke-width="1">
+            <path d="M40 90 H380 M40 150 H380 M40 210 H380 M40 268 H380"/>
+          </g>
+          <g fill="#1f4d43" opacity=".9">
+            <ellipse cx="120" cy="212" rx="52" ry="30"/>
+            <ellipse cx="150" cy="168" rx="30" ry="20"/>
+            <circle cx="122" cy="128" r="11"/>
+            <circle cx="148" cy="122" r="12"/>
+            <circle cx="172" cy="126" r="10"/>
+            <circle cx="190" cy="138" r="9"/>
+            <circle cx="202" cy="154" r="8"/>
+          </g>
+          <g fill="#a65b34" opacity=".85">
+            <rect x="248" y="84" width="8" height="170" rx="4"/>
+            <rect x="266" y="84" width="8" height="170" rx="4"/>
+            <rect x="284" y="84" width="8" height="170" rx="4"/>
+            <rect x="302" y="84" width="8" height="170" rx="4"/>
+            <rect x="320" y="84" width="8" height="170" rx="4"/>
+            <rect x="338" y="84" width="8" height="170" rx="4"/>
+          </g>
+          <path d="M60 254 C110 236 148 240 186 224 C226 208 260 226 300 206 C322 194 344 196 366 186" stroke="#1f4d43" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+          <circle cx="366" cy="186" r="5" fill="#a65b34"/>
+          <text x="52" y="56" font-family="PingFang SC,sans-serif" font-size="13" fill="#43514d">承压分布示意 · 12 组</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+
+    <!-- 左侧导航 -->
+    <nav class="side-nav" aria-label="页内栏目导航">
+      <h2>栏目导航</h2>
+      <ul>
+        <li><a href="/#overview">资源概览</a></li>
+        <li><a href="/#featured">精选足型样本</a></li>
+        <li><a href="/#latest">最新更新</a></li>
+        <li><a href="/#channels">分类频道</a></li>
+        <li><a href="/#analysis">深度解析</a></li>
+        <li><a href="/#guide">使用指南</a></li>
+        <li><a href="/#timeline">归档时间线</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#more">补充榜单</a></li>
+        <li><a href="/#reco">相关推荐</a></li>
+      </ul>
+      <p class="side-note">量测表以 2026 年 10 月 9 日启用的第二版标尺为准，旧版仅在归档页保留。</p>
+    </nav>
+
+    <!-- 主栏 -->
+    <div class="main-col">
+
+      <!-- 概览 -->
+      <section class="section" id="overview" aria-labelledby="h-overview">
+        <div class="section-head">
+          <h2 id="h-overview">资源概览</h2>
+          <span class="kicker">领域结构</span>
+          <p>围绕足部影像与足型资料，分为拍摄、量测、比对、归档四层，每层对应一套可复核的参数。</p>
+        </div>
+        <div class="metrics">
+          <div class="metric"><b>9</b><span>频道数量</span></div>
+          <div class="metric"><b>264</b><span>带出处条目</span></div>
+          <div class="metric"><b>28</b><span>足弓承压样本图</span></div>
+          <div class="metric"><b>4</b><span>量测标尺版本</span></div>
+          <div class="metric"><b>62%</b><span>条目含拍摄高度记录</span></div>
+          <div class="metric"><b>17</b><span>鞋楦比对记录</span></div>
+        </div>
+        <p style="margin-top:var(--space-3)">条目来源分三类：个人拍摄记录、线下足健门店的量测存档、公开服装院校课程作业。三类资料的采集条件不同，混用前要先看标尺编号。2026 年 10 月 21 日归档的一批足底照片里，有 14 张因未标注相机距地高度，只能作为轮廓参考，不能进入承压对比。</p>
+      </section>
+
+      <!-- 精选 -->
+      <section class="section" id="featured" aria-labelledby="h-featured">
+        <div class="section-head">
+          <h2 id="h-featured">精选足型样本</h2>
+          <span class="kicker">六条常看条目</span>
+          <p>挑选标准是标尺完整、拍摄日期在 30 天内、有至少两项可核对参数。</p>
+        </div>
+        <div class="grid-cards">
+          <article class="card">
+            <span class="pill">高足弓</span>
+            <h3><a href="/#analysis">高足弓侧面轮廓 8 号样本</a></h3>
+            <p>拍摄于 2026-10-28，相机距地 12 cm，标尺 B-04。足弓顶点距地面 41 mm，比同批 12 组中位数高 9 mm。</p>
+            <div class="meta"><span>2026-10-28</span><span>承压图 3 张</span></div>
+          </article>
+          <article class="card">
+            <span class="pill">扁平足</span>
+            <h3><a href="/#guide">扁平足承压面 4 号对照</a></h3>
+            <p>足印前掌与后跟几乎连成一片，足弓区留白宽度 6 mm。量测者记录站立三分钟后足弓下沉 2 mm。</p>
+            <div class="meta"><span>2026-10-30</span><span>标尺 B-04</span></div>
+          </article>
+          <article class="card">
+            <span class="pill">鞋楦</span>
+            <h3><a href="/#channels">41 码跑鞋楦宽对照表</a></h3>
+            <p>三双同码跑鞋前掌内宽分别为 98、101、104 mm，用游标卡尺在鞋垫前掌最宽处测得。</p>
+            <div class="meta"><span>2026-11-02</span><span>17 条楦宽记录</span></div>
+          </article>
+          <article class="card">
+            <span class="pill">步态</span>
+            <h3><a href="/#news">足跟着地角度 15 帧序列</a></h3>
+            <p>手机 60 帧拍摄，步行 6 米，取着地前后 15 帧。右脚着地角 12°，左脚 17°，差 5°。</p>
+            <div class="meta"><span>2026-10-25</span><span>视频截帧</span></div>
+          </article>
+          <article class="card">
+            <span class="pill">描摹</span>
+            <h3><a href="/#more">足型描摹纸样 3 张</a></h3>
+            <p>描摹时笔尖垂直纸面，纸样标出第一跖趾关节与足跟中点，两点连线长 243 mm。</p>
+            <div class="meta"><span>2026-10-19</span><span>纸样扫描</span></div>
+          </article>
+          <article class="card">
+            <span class="pill">湿度</span>
+            <h3><a href="/#comments">足底汗湿区域记录 2 号</a></h3>
+            <p>连续行走 20 分钟后，前掌汗湿面积 31 cm²，足弓区 4 cm²，用半透明方格纸估算。</p>
+            <div class="meta"><span>2026-11-05</span><span>方格纸 1 cm²</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="section" id="latest" aria-labelledby="h-latest">
+        <div class="section-head">
+          <h2 id="h-latest">最新更新</h2>
+          <span class="kicker">近 30 天</span>
+          <p>只列有条目编号、日期与改动点的记录；未标注改动位置的条目归入待核队列。</p>
+        </div>
+        <div class="list-compact">
+          <ul>
+            <li><time>11-06</time><span><a href="/#analysis">承压样本 12 组</a> 量测表更新，替换 3 处标尺刻度，编号 ZY-264 起生效。</span></li>
+            <li><time>11-05</time><span>新增 <a href="/#comments">足底汗湿区域记录 2 号</a>，按 1 cm² 方格纸计数。</span></li>
+            <li><time>11-02</time><span><a href="/#channels">41 码跑鞋楦宽对照表</a> 加入第三双鞋，前掌内宽 104 mm。</span></li>
+            <li><time>10-30</time><span>扁平足承压面 4 号补充站立三分钟后的下沉量 2 mm。</span></li>
+            <li><time>10-28</time><span>高足弓侧面轮廓 8 号样本入库，标尺 B-04，相机距地 12 cm。</span></li>
+            <li><time>10-25</time><span>足跟着地角度 15 帧序列完成截帧标注，左右脚差 5°。</span></li>
+            <li><time>10-21</time><span>旧版标尺刻度归档；14 张未标拍摄高度的照片移入轮廓参考区。</span></li>
+            <li><time>10-19</time><span>足型描摹纸样 3 张扫描件上传，两点连线 243 mm。</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 分类频道 -->
+      <section class="section" id="channels" aria-labelledby="h-channels">
+        <div class="section-head">
+          <h2 id="h-channels">分类频道</h2>
+          <span class="kicker">9 个频道</span>
+          <p>条目数量为截至 2026-11-06 的统计，括号内是其中带完整标尺的条数。</p>
+        </div>
+        <div class="tag-index">
+          <a href="/#featured">足弓承压样本 <small>42 条 · 完整标尺 31</small></a>
+          <a href="/#featured">足型描摹纸样 <small>27 条 · 完整标尺 19</small></a>
+          <a href="/#featured">鞋楦宽度对照 <small>17 条 · 完整标尺 17</small></a>
+          <a href="/#news">步态截帧序列 <small>36 条 · 完整标尺 12</small></a>
+          <a href="/#comments">足底汗湿记录 <small>15 条 · 完整标尺 9</small></a>
+          <a href="/#guide">拍摄角度校正 <small>24 条 · 完整标尺 24</small></a>
+          <a href="/#analysis">量测标尺版本 <small>8 条 · 完整标尺 8</small></a>
+          <a href="/#more">足跟着力面积 <small>33 条 · 完整标尺 20</small></a>
+          <a href="/#more">足趾排列照片 <small>62 条 · 完整标尺 14</small></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="section article-main" id="analysis" aria-labelledby="h-analysis">
+        <div class="section-head">
+          <h2 id="h-analysis">深度解析：承压图能告诉什么，不能告诉什么</h2>
+          <span class="kicker">唯一主体阅读区</span>
+        </div>
+        <p class="dateline">写于 2026-11-07 · 依据标尺 B-04 与 ZY-264 两批记录</p>
+
+        <p>把足底压在玻璃板上拍照，得到的深浅斑块常被直接当成“足弓高低”的结论。这个做法在 2026 年 10 月的一批样本里暴露了问题：同一双足，站立后立即拍与站满三分钟再拍，后跟区灰度值能差两级。承压图记录的是压力分布与接触面积的瞬时结果，足弓骨骼形态并不直接出现在图里。</p>
+
+        <h3>一、10 月 28 日那 12 组样本的两次拍摄</h3>
+        <p>10 月 28 日归档的高足弓侧面轮廓 8 号样本，配了同一天的两张承压图。第一张在站立 5 秒后拍，足弓区留白宽 33 mm；第二张在站立 3 分 20 秒后拍，留白缩到 29 mm。量测者记录的相机距地高度均为 12 cm，标尺编号 B-04，光源是同一盏侧灯。差别只在站立时长。</p>
+        <p>这说明承压图中的足弓留白宽度不是固定值。若把 33 mm 写成该样本的“足弓宽度”，后续与他人数据比对时会出现 4 mm 的系统偏差。样本表的备注栏因此加了一行：<span class="mark">所有留白宽度必须标注站立时长</span>。</p>
+
+        <figure>
+          <img src="https://picsum.photos/seed/footarch20261106/760/420" width="760" height="420" loading="lazy" alt="玻璃板承压测试现场示意：足底压于透明板，侧灯与标尺同框" style="object-fit:cover">
+          <figcaption>承压拍摄示意：标尺与足底同框，侧灯斜射，相机距地 12 cm。图片为版式示意，非量测原件。</figcaption>
+        </figure>
+
+        <h3>二、两个版本的标尺刻度差在哪里</h3>
+        <p>10 月 21 日之前的旧标尺，主刻度间距 5 mm，副刻度靠目测；10 月 21 日启用的第二版，主刻度间距不变，但把 0 点定在足跟最后缘，并在 20 mm 与 40 mm 处加粗。两版并用时，同一张照片的读数会差 1—2 mm，因为旧版的 0 点常被标在足跟软组织外缘。</p>
+        <table class="compare">
+          <caption>表：新旧标尺在三个位置上的读数差异（样本 8 号，站立 5 秒）</caption>
+          <tr><th>量测位置</th><td>旧版读数</td><td>第二版读数</td><td>差值</td></tr>
+          <tr><th>足弓留白宽</th><td>31 mm</td><td>33 mm</td><td>+2 mm</td></tr>
+          <tr><th>前掌接触宽</th><td>96 mm</td><td>98 mm</td><td>+2 mm</td></tr>
+          <tr><th>后跟接触长</th><td>47 mm</td><td>47 mm</td><td>0</td></tr>
+        </table>
+        <p>差值集中在前掌与足弓，后跟几乎不变，与 0 点移动的位置吻合。这也解释了为什么有些条目在两版标尺下看起来“足弓变高”，实际是零点换了位置。</p>
+
+        <h3>三、可以反驳的判断：留白宽 30 mm 以上不等于高足弓</h3>
+        <p>样本 8 号的留白宽 33 mm，被标为高足弓；而 10 月 30 日入库的扁平足承压面 4 号，留白宽仅 6 mm。两者差距明显，但把 30 mm 当作分界线会出问题。11 月 2 日的鞋楦对照里，41 码跑鞋前掌内宽 98—104 mm，足宽相近的两个人，留白宽度可以差 10 mm 以上，原因包含足部软组织的厚度与站立姿势。</p>
+        <div class="callout">
+          <b>可核对的判断：</b>承压图留白宽度适合做同一人、同一姿势下的纵向比较，不适合直接换算成足弓高度。若要判断足弓类型，至少同时记录站立时长、标尺编号与相机高度三项；缺一项，结论只能写成“待核”。
+        </div>
+
+        <h3>四、把判断拆成可核对的结构</h3>
+        <p>对“这条承压记录能不能用”的问题，按下面四步逐项打勾，四项全过才进入对比表。</p>
+        <ol class="steps">
+          <li><b>标尺编号</b>：是否为 B-04 或 ZY-264 之后版本？旧版读数需减 1—2 mm 或重新量。</li>
+          <li><b>站立时长</b>：照片备注有无写 5 秒与 3 分钟两个时间点？只写一个的，归入单点参考。</li>
+          <li><b>相机高度</b>：距地 12 cm 为准，偏差超过 2 cm 的照片需重新拍。</li>
+          <li><b>光源位置</b>：侧灯角度是否与同批一致？顶光拍摄的斑块边缘会外扩，留白读数偏小。</li>
+        </ol>
+        <div class="quote-card">
+          <p>“同一只脚，早上和晚上拍的承压图我都存了。晚上那张留白窄 3 mm，后来才知道是站了一天，足弓有点塌。要是表格里不写时间，看的人会以为我足弓变了。”</p>
+          <cite>—— 样本提供者 林姓用户，2026-11-03 的留言</cite>
+        </div>
+        <h3>五、和鞋楦对照放在一起看</h3>
+        <p>承压图解决“接触面在哪”，鞋楦表解决“鞋内空间够不够”。41 码跑鞋楦宽对照表里，前掌内宽 98 mm 的那双，配留白宽 33 mm 的样本 8 号，前掌两侧各余 4 mm；换成内宽 104 mm 的那双，余量升到 7 mm。余量不是越大越好，超过 9 mm 时足在鞋内横向滑动，步态截帧里能看到着地角变化。</p>
+        <p>把这两类数据连起来看，比单独看承压图有用。10 月 25 日的足跟着地角度序列里，换宽楦后右脚着地角从 12° 变成 14°，左脚不变。记录者只换了右脚鞋，变量控制得比较干净。</p>
+
+        <h3>六、还没有答案的部分</h3>
+        <p>足底汗湿区域记录目前只有 2 号一条，方格纸估算面积 31 cm²，没有同一人的重复测量，无法判断是稳定特征还是当天温度所致。这类单条记录在概览里被标成“示例数据”，不参与分类统计。等 11 月内补齐三次重复测量，再看是否进入对比表。</p>
+      </section>
+
+      <!-- 使用指南 -->
+      <section class="section" id="guide" aria-labelledby="h-guide">
+        <div class="section-head">
+          <h2 id="h-guide">体验指南：拍一张能用的承压图</h2>
+          <span class="kicker">四步操作</span>
+          <p>按顺序做，缺步骤会让读数失去可比性。设备只需一块透明板、一张方格纸和一部手机。</p>
+        </div>
+        <ol class="steps">
+          <li><b>铺板与标尺</b>：透明板下垫方格纸，板边贴标尺 B-04 打印件，0 点对齐足跟最后缘。</li>
+          <li><b>定相机</b>：手机架在距地 12 cm 处，镜头垂直向下，画面内同时出现标尺与前掌。</li>
+          <li><b>两次拍摄</b>：站立 5 秒拍第一张，站满 3 分钟拍第二张，中间不移动脚。</li>
+          <li><b>写备注</b>：在文件名里写日期、标尺编号、站立时长与光源位置，四项缺一不可。</li>
+        </ol>
+        <div class="callout">
+          <b>常见失误：</b>顶灯直射会让斑块边缘外扩，留白读数偏小 2—3 mm；脚趾抓板会让前掌接触面积虚增。拍摄前先让脚自然放松 10 秒。
+        </div>
+      </section>
+
+      <!-- 时间线 -->
+      <section class="section" id="timeline" aria-labelledby="h-timeline">
+        <div class="section-head">
+          <h2 id="h-timeline">归档时间线</h2>
+          <span class="kicker">近 30 天关键节点</span>
+        </div>
+        <ul class="timeline">
+          <li><time>2026-11-06</time>承压样本 12 组量测表更新，替换 3 处标尺刻度，编号 ZY-264 起生效。</li>
+          <li><time>2026-11-02</time>41 码跑鞋楦宽对照表加入第三双鞋，前掌内宽 104 mm。</li>
+          <li><time>2026-10-28</time>高足弓侧面轮廓 8 号样本入库，同日两张承压图分别对应站立 5 秒与 3 分 20 秒。</li>
+          <li><time>2026-10-25</time>足跟着地角度 15 帧序列完成标注，左右脚差 5°。</li>
+          <li><time>2026-10-21</time>旧版标尺刻度归档，14 张未标拍摄高度的照片移入轮廓参考区。</li>
+        </ul>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section faq" id="faq" aria-labelledby="h-faq">
+        <div class="section-head">
+          <h2 id="h-faq">常见问题</h2>
+          <span class="kicker">量测与使用</span>
+        </div>
+        <details>
+          <summary>承压图里的足弓留白宽怎么量才算准？</summary>
+          <div class="ans"><p>以标尺 B-04 的 0 点为起点，量足弓区最窄处的横向留白。同一张图至少量两次取平均，两次差值超过 1 mm 就重拍。站立时长要写在备注里，5 秒与 3 分钟的读数不能混用。</p></div>
+        </details>
+        <details>
+          <summary>41 码跑鞋前掌内宽 98 mm 和 104 mm 差 6 mm，选哪个？</summary>
+          <div class="ans"><p>先看足型描摹纸样里第一跖趾关节到足跟中点的连线长度，再看承压图前掌接触宽。前掌接触宽 98 mm 的脚选 104 mm 楦宽，两侧各余 3 mm 左右；若选 98 mm，余量接近 0，长距离行走后前掌外侧容易发麻。</p></div>
+        </details>
+        <details>
+          <summary>足跟着地角度差 5° 需要处理吗？</summary>
+          <div class="ans"><p>单次 6 米步行的截帧只能看趋势。10 月 25 日的序列里左右差 5°，记录者换宽楦后右脚变为 14°。若要判断是否稳定，需在同一地面、同一鞋款下重复三次，取三次的中位数再看差值。</p></div>
+        </details>
+        <details>
+          <summary>旧版标尺拍的照片还能用吗？</summary>
+          <div class="ans"><p>能用，但要换算。前掌接触宽与足弓留白宽需各加 2 mm，后跟接触长不变。换算后仍建议在备注写“旧版标尺”，避免与 ZY-264 之后的读数直接放进同一列。</p></div>
+        </details>
+        <details>
+          <summary>足底汗湿面积的方格纸估算误差有多大？</summary>
+          <div class="ans"><p>1 cm² 方格纸目测计数，边缘半格按半格算，同一人重复计数差 1—2 cm²。31 cm² 这个读数来自单次测量，没有重复样本，暂不进入分类统计，只作个人纵向参考。</p></div>
+        </details>
+      </section>
+
+      <!-- 评论 -->
+      <section class="section" id="comments" aria-labelledby="h-comments">
+        <div class="section-head">
+          <h2 id="h-comments">用户评论</h2>
+          <span class="kicker">近期 6 条</span>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <div class="who"><span class="avatar">陈</span><b>陈姓用户</b><time>2026-11-06</time></div>
+            <p><span class="ref">承压样本 12 组</span>的更新表我看了，标尺刻度替换的位置标了编号，这点做得清楚。就是站立时长的列还是只有两个时间点，中间站 1 分钟的数据没有。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">林</span><b>林姓用户</b><time>2026-11-05</time></div>
+            <p>汗湿面积那条我按方格纸自己数了一遍，前掌 29 cm²，比记录里的 31 cm² 少两格。可能是我脚小一号。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">周</span><b>周姓用户</b><time>2026-11-04</time></div>
+            <p>41 码跑鞋楦宽对照表挺实用，但三双鞋的鞋垫厚度没写。鞋垫厚一点，内宽就少一点，这个变量不控住，98 和 104 的差别会打折扣。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">吴</span><b>吴姓用户</b><time>2026-11-03</time></div>
+            <p>样本 8 号那张 33 mm 留白的照片，侧灯角度看起来比同批其他图偏左，斑块右下边缘有点虚。不知道是不是我的屏幕问题。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">赵</span><b>赵姓用户</b><time>2026-11-02</time></div>
+            <p>旧版标尺需要加 2 mm 的换算说明来得晚了点。我 10 月中旬就用旧版拍了一组，现在全部要重算，麻烦。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">何</span><b>何姓用户</b><time>2026-10-31</time></div>
+            <p>足跟着地角度的 15 帧序列拍得挺细，着地瞬间那帧能看清后跟外侧先触地。这类截帧比单张静态照有用。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news" aria-labelledby="h-news">
+        <div class="section-head">
+          <h2 id="h-news">相关资讯</h2>
+          <span class="kicker">外部与站内动态</span>
+        </div>
+        <div class="grid-cards">
+          <article class="card">
+            <h3><a href="/#analysis">第二版标尺在 11 月起全面启用</a></h3>
+            <p>ZY-264 之后的条目统一用零点在足跟最后缘的刻度，旧版读数需换算后再比对。</p>
+            <div class="meta"><span>2026-11-06</span><span>站内规则</span></div>
+          </article>
+          <article class="card">
+            <h3><a href="/#guide">手机 60 帧截帧步态法的参数与限制</a></h3>
+            <p>60 帧拍 6 米步行，单帧间隔约 16.7 ms，着地前后可取 15 帧。地面反光会影响脚踝标记点识别。</p>
+            <div class="meta"><span>2026-11-01</span><span>方法说明</span></div>
+          </article>
+          <article class="card">
+            <h3><a href="/#channels">跑鞋鞋楦标注内宽的三种口径</a></h3>
+            <p>鞋垫实测、中底标注与品牌尺码表给出的前掌内宽常差 3—6 mm，对照时需先确认口径。</p>
+            <div class="meta"><span>2026-10-27</span><span>口径整理</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 补充榜单 -->
+      <section class="section" id="more" aria-labelledby="h-more">
+        <div class="section-head">
+          <h2 id="h-more">补充板块：三条可信度分层</h2>
+          <span class="kicker">按出处强度排序</span>
+          <p>分层依据是记录是否同时具备标尺编号、拍摄日期、相机高度与光源说明四项。</p>
+        </div>
+        <div class="grid-cards">
+          <article class="card">
+            <span class="pill">A 级 · 四项全有</span>
+            <h3>高足弓侧面轮廓 8 号样本</h3>
+            <p>标尺 B-04、日期 2026-10-28、相机距地 12 cm、侧灯 45° 均有记录，可直接进入对比表。</p>
+          </article>
+          <article class="card">
+            <span class="pill">B 级 · 缺一项</span>
+            <h3>扁平足承压面 4 号对照</h3>
+            <p>缺光源说明，其余三项齐全。留白宽度可作参考，但不与 A 级样本放同一列取平均。</p>
+          </article>
+          <article class="card">
+            <span class="pill">C 级 · 缺两项以上</span>
+            <h3>足底汗湿区域记录 2 号</h3>
+            <p>有日期与方格纸口径，缺重复测量与温湿度记录。作为示例数据保留，不进入分类统计。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="reco" aria-labelledby="h-reco">
+        <div class="section-head">
+          <h2 id="h-reco">相关推荐</h2>
+          <span class="kicker">按当前浏览方向</span>
+        </div>
+        <div class="reco-tags">
+          <a href="/#featured">足型描摹纸样怎么画</a>
+          <a href="/#featured">足弓承压图判读</a>
+          <a href="/#news">步态截帧拍摄参数</a>
+          <a href="/#channels">41 码跑鞋楦宽</a>
+          <a href="/#guide">标尺零点对齐方法</a>
+          <a href="/#comments">足底汗湿面积估算</a>
+          <a href="/#more">量测记录可信度分层</a>
+        </div>
+        <p class="note" style="margin-top:var(--space-3)">推荐条目均来自站内已归档内容，更新日期在 2026-10-19 至 2026-11-06 之间。</p>
+      </section>
+
+    </div>
+
+    <!-- 侧栏 -->
+    <aside class="aside-col" aria-label="侧栏">
+      <div class="aside-card">
+        <h3>本周阅读榜</h3>
+        <ol class="rank-list">
+          <li><a href="/#analysis">承压图留白宽三段比较</a><small>11-06 更新 · 1,204 次</small></li>
+          <li><a href="/#channels">41 码跑鞋楦宽对照</a><small>11-02 · 986 次</small></li>
+          <li><a href="/#featured">高足弓样本 8 号</a><small>10-28 · 731 次</small></li>
+          <li><a href="/#guide">手机拍承压图四步</a><small>10-26 · 655 次</small></li>
+          <li><a href="/#faq">旧版标尺换算</a><small>10-21 · 512 次</small></li>
+        </ol>
+      </div>
+      <div class="aside-card">
+        <h3>量测速查</h3>
+        <ul class="mini-list">
+          <li><a href="/#guide">相机距地高度 <em>12 cm</em></a></li>
+          <li><a href="/#guide">有效站立时长 <em>5 秒 / 3 分钟</em></a></li>
+          <li><a href="/#analysis">旧版读数换算 <em>+2 mm</em></a></li>
+          <li><a href="/#faq">方格纸单元 <em>1 cm²</em></a></li>
+          <li><a href="/#more">进入对比表门槛 <em>四项齐全</em></a></li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <h3>热门标签</h3>
+        <div class="reco-tags">
+          <a href="/#featured">足弓留白</a>
+          <a href="/#news">着地角度</a>
+          <a href="/#channels">鞋楦内宽</a>
+          <a href="/#featured">描摹纸样</a>
+          <a href="/#more">可信度分层</a>
+          <a href="/#comments">汗湿面积</a>
+        </div>
+      </div>
+      <div class="aside-card">
+        <h3>归档说明</h3>
+        <p class="note" style="line-height:1.8">页面内样本条目均为版式示例，参数按垂类常见口径生成；涉及个人足部数据时已作匿名处理。更新时间 2026-11-08，对应正文更新记录中的 11-06 承压样本表修订。</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#d8c9a3"/>
+            <path d="M18 47c0-12 4.5-19 11-22" stroke="#14332d" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+            <path d="M27 47c0-9 3-14 8.5-17" stroke="#14332d" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+            <ellipse cx="43" cy="25" rx="9" ry="6.5" fill="#14332d"/>
+          </svg>
+          <b>86.6g印象足资源</b>
+        </div>
+        <p>整理足部影像与足型资料，让每一张承压图都能说清拍摄条件。</p>
+        <p class="note" style="color:#93a49c">页脚更新时间：2026-11-08，对应正文 11-06 承压样本量测表修订与 11-05 汗湿记录新增。</p>
+      </div>
+      <div>
+        <h4>频道入口</h4>
+        <ul>
+          <li><a href="/#featured">足弓承压样本</a></li>
+          <li><a href="/#featured">足型描摹纸样</a></li>
+          <li><a href="/#channels">鞋楦宽度对照</a></li>
+          <li><a href="/#news">步态截帧序列</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>方法栏目</h4>
+        <ul>
+          <li><a href="/#analysis">承压图判读</a></li>
+          <li><a href="/#guide">拍摄四步法</a></li>
+          <li><a href="/#faq">标尺换算问答</a></li>
+          <li><a href="/#more">可信度分层</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>互动</h4>
+        <ul>
+          <li><a href="/#comments">用户留言</a></li>
+          <li><a href="/#latest">更新记录</a></li>
+          <li><a href="/#timeline">归档时间线</a></li>
+          <li><a href="/#reco">相关推荐</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>页面内个人资料、拍摄参数与评论均为示例数据，用于展示条目的组织方式；实际量测请以现场设备与标尺为准。</p>
+      <p>© 2026 86.6g印象足资源 · 内容整理与保留所有权利。</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.textContent = open ? '菜单 ▴' : '菜单 ▾';
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.matchMedia('(max-width:980px)').matches){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.textContent = '菜单 ▾';
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && nav.classList.contains('open')){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.textContent = '菜单 ▾';
+        toggle.focus();
+      }
+    });
+  }
+
+  /* 站内搜索 */
+  var input = document.getElementById('siteSearch');
+  var btn = document.getElementById('searchBtn');
+  var feedback = document.getElementById('searchFeedback');
+  var entries = [];
+  var nodes = document.querySelectorAll('h2, h3, .tag-index a, .list-compact li, .comment p, .card p, .reco-tags a, .faq summary');
+  nodes.forEach(function(el, i){
+    var text = (el.textContent || '').replace(/\s+/g,' ').trim();
+    if(text.length > 4){
+      var target = el.closest('section[id]') || el.closest('[id]');
+      entries.push({el: el, text: text, target: target});
+    }
+  });
+  function runSearch(){
+    var q = (input.value || '').trim();
+    if(!q){
+      feedback.style.display = 'none';
+      feedback.textContent = '';
+      return;
+    }
+    var hit = null;
+    for(var i = 0; i < entries.length; i++){
+      if(entries[i].text.indexOf(q) !== -1){ hit = entries[i]; break; }
+    }
+    if(hit){
+      var id = hit.target ? hit.target.id : '';
+      feedback.style.display = 'block';
+      feedback.textContent = '找到相关条目：' + hit.text.slice(0, 46) + (id ? '（已定位到对应栏目）' : '');
+      if(id){
+        var dest = document.getElementById(id);
+        if(dest){ dest.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }
+    } else {
+      feedback.style.display = 'block';
+      feedback.textContent = '没有找到“' + q + '”相关的条目，可尝试「足弓留白」「标尺」「楦宽」「着地角度」等词。';
+    }
+  }
+  if(btn){ btn.addEventListener('click', runSearch); }
+  if(input){
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); runSearch(); }
+    });
+    input.addEventListener('input', function(){
+      if(!input.value.trim()){ feedback.style.display = 'none'; feedback.textContent = ''; }
+    });
+  }
+
+  /* 侧栏滚动高亮 */
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('.side-nav a'));
+  var sections = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  if('IntersectionObserver' in window && sections.length){
+    var io = new IntersectionObserver(function(list){
+      list.forEach(function(entry){
+        if(entry.isIntersecting){
+          sideLinks.forEach(function(a){ a.classList.remove('active'); });
+          var act = sideLinks.filter(function(a){
+            return a.getAttribute('href') === '/#' + entry.target.id;
+          })[0];
+          if(act){ act.classList.add('active'); }
+        }
+      });
+    }, {rootMargin: '-40% 0px -55% 0px', threshold: 0});
+    sections.forEach(function(s){ io.observe(s); });
+  }
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  var ticking = false;
+  function onScroll(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        if(window.scrollY > 460){ toTop.classList.add('show'); }
+        else { toTop.classList.remove('show'); }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "86.6g印象足资源",
+  "description": "足部影像与足型资料的整理站点，覆盖承压样本、描摹纸样、鞋楦对照与量测口径。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "承压图里的足弓留白宽怎么量才算准？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "以标尺 B-04 的 0 点为起点，量足弓区最窄处的横向留白。同一张图至少量两次取平均，两次差值超过 1 mm 就重拍。站立时长要写在备注里，5 秒与 3 分钟的读数不能混用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "41 码跑鞋前掌内宽 98 mm 和 104 mm 差 6 mm，选哪个？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "先看足型描摹纸样里第一跖趾关节到足跟中点的连线长度，再看承压图前掌接触宽。前掌接触宽 98 mm 的脚选 104 mm 楦宽，两侧各余 3 mm 左右；若选 98 mm，余量接近 0，长距离行走后前掌外侧容易发麻。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "足跟着地角度差 5° 需要处理吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "单次 6 米步行的截帧只能看趋势。10 月 25 日的序列里左右差 5°，记录者换宽楦后右脚变为 14°。若要判断是否稳定，需在同一地面、同一鞋款下重复三次，取三次的中位数再看差值。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "旧版标尺拍的照片还能用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能用，但要换算。前掌接触宽与足弓留白宽需各加 2 mm，后跟接触长不变。换算后仍建议在备注写旧版标尺，避免与 ZY-264 之后的读数直接放进同一列。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "足底汗湿面积的方格纸估算误差有多大？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 cm² 方格纸目测计数，边缘半格按半格算，同一人重复计数差 1—2 cm²。31 cm² 这个读数来自单次测量，没有重复样本，暂不进入分类统计，只作个人纵向参考。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+                                                                                       </html>
