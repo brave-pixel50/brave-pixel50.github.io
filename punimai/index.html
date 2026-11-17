@@ -1,0 +1,1167 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>朴妮唛-在线播放观看入口与作品解析</title>
+<meta name="description" content="朴妮唛在线播放相关作品与视频的观看索引，整理在线播放设备适配、清晰度对比、直播录像与短视频播放区别、常见播放问题排查，以及观众对具体作品的评价汇总，方便按需检索与回看。">
+<meta name="keywords" content="朴妮唛">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2b3a'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2a65a' stroke-width='3'/%3E%3Cpath d='M27 23l16 9-16 9z' fill='%23f2a65a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2b3a;
+  --ink-2:#31465c;
+  --muted:#5f7085;
+  --line:#dde4ec;
+  --paper:#ffffff;
+  --paper-2:#f4f7fa;
+  --paper-3:#eaf0f6;
+  --accent:#c8641f;
+  --accent-2:#f2a65a;
+  --accent-soft:#fdf1e6;
+  --teal:#20625c;
+  --teal-soft:#e6f2f0;
+  --radius:12px;
+  --radius-s:7px;
+  --shadow:0 2px 10px rgba(28,43,58,.07);
+  --shadow-lift:0 6px 18px rgba(28,43,58,.12);
+  --fs-h1:clamp(1.7rem,4.4vw,2.6rem);
+  --fs-h2:clamp(1.25rem,2.6vw,1.55rem);
+  --fs-h3:1.06rem;
+  --fs-body:1rem;
+  --fs-s:.875rem;
+  --fs-xs:.79rem;
+  --announce-h:44px;
+  --header-h:64px;
+  --sp-1:8px;--sp-2:14px;--sp-3:22px;--sp-4:32px;--sp-5:48px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--announce-h) + var(--header-h) + 12px)}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  font-size:var(--fs-body);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--ink-2);text-decoration:none}
+a:hover{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 .9em}
+ul,ol{margin:0 0 .9em;padding-left:1.2em}
+li{margin-bottom:.35em}
+
+/* 吸顶：公告条 + 页头 */
+.stick-wrap{
+  position:sticky;top:0;z-index:60;
+}
+.announce-bar{
+  height:var(--announce-h);
+  display:flex;align-items:center;gap:10px;
+  background:var(--ink);
+  color:#e8eef5;
+  font-size:var(--fs-xs);
+  padding:0 16px;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.announce-bar .tag{
+  flex:none;
+  background:var(--accent);
+  color:#fff;
+  font-weight:700;
+  padding:2px 8px;
+  border-radius:99px;
+  letter-spacing:.04em;
+}
+.announce-bar .ann-track{
+  overflow:hidden;text-overflow:ellipsis;
+}
+.announce-bar b{color:var(--accent-2);font-weight:600}
+.site-header{
+  height:var(--header-h);
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;
+  padding:0 16px;
+  gap:14px;
+}
+.brand{
+  display:flex;align-items:center;gap:9px;flex:none;
+  font-weight:800;font-size:1.08rem;color:var(--ink);letter-spacing:.02em;
+}
+.brand svg{width:30px;height:30px;flex:none}
+.brand span{white-space:nowrap}
+.main-nav{
+  display:flex;gap:2px;flex:1;
+  overflow-x:auto;scrollbar-width:none;
+}
+.main-nav::-webkit-scrollbar{display:none}
+.main-nav a{
+  padding:7px 11px;border-radius:99px;font-size:var(--fs-s);
+  color:var(--ink-2);white-space:nowrap;font-weight:500;
+}
+.main-nav a:hover{background:var(--paper-3);color:var(--ink)}
+.main-nav a.active{background:var(--accent-soft);color:var(--accent);font-weight:700}
+.head-tools{display:flex;align-items:center;gap:8px;flex:none}
+.search-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:var(--paper);
+  color:var(--ink-2);font-size:var(--fs-s);
+  padding:7px 13px;border-radius:99px;cursor:pointer;
+  font-family:inherit;
+}
+.search-btn:hover{border-color:var(--accent);color:var(--accent)}
+.menu-btn{
+  display:none;background:var(--paper);border:1px solid var(--line);
+  border-radius:8px;width:40px;height:36px;cursor:pointer;padding:0;
+  align-items:center;justify-content:center;flex-direction:column;gap:4px;
+}
+.menu-btn i{display:block;width:17px;height:2px;background:var(--ink);border-radius:2px}
+@media (max-width:900px){
+  .main-nav{
+    position:absolute;top:calc(var(--announce-h) + var(--header-h));left:0;right:0;
+    display:none;flex-direction:column;background:var(--paper);
+    border-bottom:1px solid var(--line);box-shadow:var(--shadow-lift);
+    padding:10px 14px;gap:2px;max-height:60vh;overflow-y:auto;
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:10px 12px;border-radius:8px}
+  .menu-btn{display:flex}
+}
+
+/* 搜索面板 */
+.search-panel{
+  display:none;
+  background:var(--paper-2);
+  border-bottom:1px solid var(--line);
+  padding:12px 16px;
+}
+.search-panel.open{display:block}
+.search-inner{max-width:1180px;margin:0 auto;display:flex;gap:10px}
+.search-inner input{
+  flex:1;font-family:inherit;font-size:var(--fs-body);
+  padding:10px 14px;border:1px solid var(--line);border-radius:99px;
+  background:#fff;color:var(--ink);
+}
+.search-inner input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.search-inner button{
+  border:none;background:var(--ink);color:#fff;font-family:inherit;
+  padding:10px 20px;border-radius:99px;cursor:pointer;font-size:var(--fs-s);
+}
+.search-result{
+  max-width:1180px;margin:10px auto 0;
+  font-size:var(--fs-s);color:var(--muted);
+}
+.search-result ul{margin:6px 0 0;padding-left:1.1em}
+.search-result li a{color:var(--accent)}
+
+/* 布局容器 */
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.page-main{padding:var(--sp-4) 0 var(--sp-5)}
+.two-col{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 290px;
+  gap:var(--sp-4);
+  align-items:start;
+}
+@media (max-width:900px){
+  .two-col{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  :root{--announce-h:40px;--header-h:58px}
+}
+
+/* 首屏 */
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(242,166,90,.24), transparent 46%),
+    radial-gradient(circle at 10% 88%, rgba(32,98,92,.14), transparent 52%),
+    linear-gradient(160deg,#1c2b3a 0%,#243c50 58%,#2c4a5e 100%);
+  color:#eaf0f6;
+  padding:var(--sp-4) var(--sp-4) var(--sp-3);
+  margin-bottom:var(--sp-4);
+}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);gap:var(--sp-3);align-items:center}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}}
+.hero .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:var(--fs-xs);letter-spacing:.14em;color:var(--accent-2);
+  border:1px solid rgba(242,166,90,.5);border-radius:99px;padding:4px 12px;
+  margin-bottom:var(--sp-2);text-transform:uppercase;
+}
+.hero h1{font-size:var(--fs-h1);color:#fff;letter-spacing:.01em;margin-bottom:var(--sp-2)}
+.hero .lead{color:#c9d7e3;font-size:1.02rem;max-width:34em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--sp-3)}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 20px;border-radius:99px;font-size:var(--fs-s);font-weight:600;
+  transition:transform .18s ease, background .18s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--accent);color:#fff}
+.btn-main:hover{background:#b5581a;color:#fff}
+.btn-ghost{background:rgba(255,255,255,.09);color:#eaf0f6;border:1px solid rgba(255,255,255,.26)}
+.btn-ghost:hover{background:rgba(255,255,255,.16);color:#fff}
+.hero-facts{
+  display:flex;flex-wrap:wrap;gap:var(--sp-2);
+  margin-top:var(--sp-3);padding-top:var(--sp-2);
+  border-top:1px solid rgba(255,255,255,.16);
+  font-size:var(--fs-xs);color:#b9cad9;
+}
+.hero-facts b{display:block;font-size:1.22rem;color:var(--accent-2);line-height:1.2}
+.hero-visual{position:relative;min-height:220px;display:flex;align-items:center;justify-content:center}
+.hero-visual svg{width:100%;max-width:330px;height:auto}
+
+/* 板块通用 */
+.section{margin-bottom:var(--sp-5)}
+.section:last-child{margin-bottom:0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:var(--sp-3);flex-wrap:wrap}
+.sec-head h2{font-size:var(--fs-h2);display:flex;align-items:center;gap:10px}
+.sec-head h2::before{
+  content:"";width:6px;height:1.05em;background:var(--accent);border-radius:2px;flex:none;
+}
+.sec-head .more{font-size:var(--fs-s);color:var(--muted);font-weight:500}
+.sec-head .more:hover{color:var(--accent)}
+.sec-sub{font-size:var(--fs-s);color:var(--muted);margin-top:-4px;margin-bottom:var(--sp-2)}
+
+/* 概览卡片网格 */
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-2)}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-2)}
+@media (max-width:860px){.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.grid-3,.grid-2{grid-template-columns:1fr}}
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:var(--sp-3);
+  box-shadow:var(--shadow);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.card h3{font-size:var(--fs-h3);margin-bottom:6px}
+.card p{font-size:var(--fs-s);color:var(--muted);margin:0}
+.card .kicker{
+  font-size:var(--fs-xs);color:var(--teal);font-weight:700;letter-spacing:.05em;
+  display:inline-block;margin-bottom:6px;
+}
+
+/* 精选：不等权网格 */
+.feature-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  grid-auto-rows:auto;
+  gap:var(--sp-2);
+}
+@media (max-width:860px){.feature-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.feature-grid{grid-template-columns:1fr}}
+.feat{
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:var(--paper);display:flex;flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.feat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.feat.big{grid-row:span 2}
+.feat img{width:100%;height:150px;object-fit:cover}
+.feat.big img{height:250px}
+.feat-body{padding:var(--sp-2) var(--sp-3) var(--sp-3);display:flex;flex-direction:column;flex:1}
+.feat-body h3{font-size:1.02rem;margin-bottom:6px}
+.feat-body p{font-size:var(--fs-s);color:var(--muted);margin:0 0 10px}
+.meta{font-size:var(--fs-xs);color:var(--muted);margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.meta .dot{color:var(--line)}
+
+/* 最新更新：紧凑列表 */
+.update-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.update-list li{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:13px 2px;border-bottom:1px solid var(--line);margin:0;
+}
+.update-list .date{
+  flex:none;width:66px;font-size:var(--fs-xs);color:var(--accent);
+  font-weight:700;font-variant-numeric:tabular-nums;padding-top:3px;
+}
+.update-list .u-body{flex:1;min-width:0}
+.update-list .u-body a{font-weight:600;font-size:.97rem}
+.update-list .u-body p{font-size:var(--fs-s);color:var(--muted);margin:2px 0 0}
+.update-list .badge{
+  flex:none;font-size:var(--fs-xs);border:1px solid var(--line);
+  border-radius:99px;padding:1px 9px;color:var(--muted);align-self:center;
+}
+
+/* 标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:9px}
+.tag-index a{
+  font-size:var(--fs-s);padding:7px 14px;border-radius:99px;
+  background:var(--paper-2);border:1px solid var(--line);color:var(--ink-2);
+}
+.tag-index a:hover{background:var(--accent-soft);border-color:var(--accent-2);color:var(--accent)}
+.tag-index a .n{color:var(--muted);font-size:var(--fs-xs);margin-left:5px}
+
+/* 深度解析 */
+.deep{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--paper);padding:var(--sp-3);
+}
+.deep .deep-lead{
+  border-left:3px solid var(--accent);padding-left:14px;
+  color:var(--ink-2);font-size:.97rem;margin-bottom:var(--sp-3);
+}
+.deep h3{font-size:1.08rem;margin:var(--sp-3) 0 8px;padding-top:var(--sp-2);border-top:1px dashed var(--line)}
+.deep h3:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.deep p{font-size:.97rem}
+.callout{
+  background:var(--teal-soft);border-radius:var(--radius-s);
+  padding:12px 16px;font-size:var(--fs-s);color:var(--teal);
+  margin:var(--sp-2) 0;
+}
+.callout b{color:#164a45}
+.mini-table{width:100%;border-collapse:collapse;font-size:var(--fs-s);margin:var(--sp-2) 0}
+.mini-table th,.mini-table td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+.mini-table th{background:var(--paper-2);font-weight:600;color:var(--ink-2);white-space:nowrap}
+.mini-table td{color:var(--muted)}
+.mini-table td b{color:var(--ink)}
+
+/* 体验指南：编号步骤 */
+.steps{list-style:none;margin:0;padding:0;counter-reset:step}
+.steps li{
+  counter-increment:step;position:relative;
+  padding:0 0 var(--sp-3) 46px;margin:0;
+  border-left:2px solid var(--line);margin-left:15px;
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps li::before{
+  content:counter(step);
+  position:absolute;left:-16px;top:-2px;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--accent);color:#fff;font-weight:700;font-size:var(--fs-s);
+  display:flex;align-items:center;justify-content:center;
+}
+.steps h3{font-size:1rem;margin-bottom:4px}
+.steps p{font-size:var(--fs-s);color:var(--muted);margin:0}
+
+/* FAQ */
+.faq details{
+  border:1px solid var(--line);border-radius:var(--radius-s);
+  background:var(--paper);margin-bottom:10px;overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;list-style:none;padding:13px 42px 13px 16px;
+  font-weight:600;font-size:.97rem;position:relative;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  font-size:1.2rem;color:var(--accent);font-weight:400;line-height:1;
+}
+.faq details[open] summary::after{content:"–"}
+.faq details[open] summary{background:var(--paper-2)}
+.faq .faq-body{padding:2px 16px 15px;font-size:var(--fs-s);color:var(--muted)}
+.faq .faq-body p{margin:0}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-2)}
+@media (max-width:560px){.comment-grid{grid-template-columns:1fr}}
+.comment{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--sp-2) var(--sp-3);background:var(--paper-2);
+}
+.comment .who{display:flex;align-items:center;gap:8px;font-size:var(--fs-s);font-weight:600;margin-bottom:5px}
+.comment .avatar{
+  width:26px;height:26px;border-radius:50%;flex:none;
+  background:var(--accent-2);color:#fff;font-size:var(--fs-xs);
+  display:flex;align-items:center;justify-content:center;font-weight:700;
+}
+.comment .who .time{margin-left:auto;font-weight:400;color:var(--muted);font-size:var(--fs-xs)}
+.comment p{font-size:var(--fs-s);margin:0;color:var(--ink-2)}
+.comment .quote{
+  display:block;margin-top:7px;padding-left:9px;border-left:2px solid var(--accent-2);
+  font-size:var(--fs-xs);color:var(--muted);
+}
+
+/* 资讯列表 */
+.news-list{list-style:none;margin:0;padding:0}
+.news-list li{padding:11px 0;border-bottom:1px solid var(--line);margin:0;display:flex;gap:12px;align-items:flex-start}
+.news-list li:last-child{border-bottom:none}
+.news-list .nb{
+  flex:none;font-size:var(--fs-xs);background:var(--accent-soft);color:var(--accent);
+  padding:1px 8px;border-radius:99px;margin-top:3px;font-weight:600;
+}
+.news-list .nt a{font-weight:600;font-size:.95rem}
+.news-list .nt p{font-size:var(--fs-s);color:var(--muted);margin:2px 0 0}
+
+/* 榜单 */
+.rank-list{list-style:none;counter-reset:rk;margin:0;padding:0}
+.rank-list li{
+  counter-increment:rk;display:flex;gap:13px;align-items:center;
+  padding:11px 0;border-bottom:1px solid var(--line);margin:0;
+}
+.rank-list li:last-child{border-bottom:none}
+.rank-list li::before{
+  content:counter(rk);flex:none;width:24px;height:24px;border-radius:6px;
+  background:var(--paper-3);color:var(--ink-2);font-size:var(--fs-xs);font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.rank-list li:nth-child(-n+3)::before{background:var(--accent);color:#fff}
+.rank-list .rk-title{flex:1;font-size:.95rem;font-weight:600}
+.rank-list .rk-note{font-size:var(--fs-xs);color:var(--muted);flex:none}
+
+/* 侧栏 */
+.sidebar{position:sticky;top:calc(var(--announce-h) + var(--header-h) + 16px);display:flex;flex-direction:column;gap:var(--sp-2)}
+@media (max-width:900px){.sidebar{position:static}}
+.side-card{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--paper-2);padding:var(--sp-2) var(--sp-3);
+}
+.side-card h2{font-size:.95rem;margin-bottom:9px;color:var(--ink)}
+.side-nav{display:flex;flex-direction:column;gap:1px}
+.side-nav a{
+  display:block;font-size:var(--fs-s);padding:7px 10px;border-radius:7px;color:var(--muted);
+  border-left:2px solid transparent;
+}
+.side-nav a:hover{background:#fff;color:var(--ink)}
+.side-nav a.current{background:#fff;color:var(--accent);font-weight:600;border-left-color:var(--accent)}
+.side-stats{list-style:none;padding:0;margin:0;font-size:var(--fs-s)}
+.side-stats li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--line);margin:0}
+.side-stats li:last-child{border-bottom:none}
+.side-stats b{color:var(--accent);font-variant-numeric:tabular-nums}
+
+/* 页脚 */
+.site-footer{background:var(--ink);color:#b9cad9;padding:var(--sp-4) 0 var(--sp-3);font-size:var(--fs-s)}
+.footer-top{display:grid;grid-template-columns:1.3fr 2fr;gap:var(--sp-4)}
+@media (max-width:760px){.footer-top{grid-template-columns:1fr}}
+.footer-brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.1rem;color:#fff;margin-bottom:10px}
+.footer-brand svg{width:28px;height:28px}
+.footer-pos{color:#8fa4b7;max-width:26em;font-size:var(--fs-s)}
+.footer-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-3)}
+@media (max-width:480px){.footer-cols{grid-template-columns:1fr 1fr}}
+.footer-cols h3{font-size:var(--fs-s);color:#fff;margin-bottom:9px;font-weight:600}
+.footer-cols ul{list-style:none;padding:0;margin:0}
+.footer-cols li{margin-bottom:5px}
+.footer-cols a{color:#8fa4b7;font-size:var(--fs-xs)}
+.footer-cols a:hover{color:var(--accent-2)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:var(--sp-3);padding-top:var(--sp-2);
+  display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;
+  font-size:var(--fs-xs);color:#7b8fa1;
+}
+.footer-bottom .note{max-width:52em}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:18px;bottom:20px;z-index:50;
+  width:44px;height:44px;border-radius:50%;border:none;
+  background:var(--ink);color:#fff;cursor:pointer;
+  box-shadow:var(--shadow-lift);display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .22s ease, transform .22s ease, visibility .22s;
+  font-size:1.05rem;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--accent)}
+@media (max-width:560px){.to-top{right:12px;bottom:14px;width:40px;height:40px}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .card:hover,.feat:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="stick-wrap">
+  <div class="announce-bar" role="note" aria-label="站点公告">
+    <span class="tag">朴妮唛</span>
+    <span class="ann-track">11 月 6 日更新：<b>直播录像《夜谈第 12 期》</b>补齐 1080P 片源，清晰度选项新增 720P 低流量档；同日修复移动端播放进度未保存问题。</span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="/#" aria-label="朴妮唛 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1c2b3a"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#f2a65a" stroke-width="3"/>
+        <path d="M27 23l16 9-16 9z" fill="#f2a65a"/>
+      </svg>
+      <span>朴妮唛</span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">观看概览</a>
+      <a href="/#picked">精选片单</a>
+      <a href="/#updates">更新记录</a>
+      <a href="/#channels">频道分类</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">播放指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#rank">热度榜</a>
+    </nav>
+    <div class="head-tools">
+      <button class="search-btn" id="searchBtn" type="button" aria-expanded="false" aria-controls="searchPanel">
+        <svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L18 18"/></svg>
+        站内检索
+      </button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="展开导航菜单">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-panel" id="searchPanel">
+    <div class="search-inner">
+      <input id="searchInput" type="search" placeholder="输入条目名，如：夜谈第 12 期、午后读书、直播录像" aria-label="站内检索关键词">
+      <button id="searchGo" type="button">检索</button>
+    </div>
+    <div class="search-result" id="searchResult" aria-live="polite"></div>
+  </div>
+</div>
+
+<main class="page-main">
+  <div class="wrap">
+
+    <section class="hero" id="overview" aria-label="主题首屏">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">在线播放 · 作品索引</span>
+          <h1>朴妮唛</h1>
+          <p class="lead">把直播录像、短视频片段与访谈长内容分开整理：每条入库都标注原始平台、发布日期与可播放清晰度，播放前就能看清哪一档画质在手机上不吃力。</p>
+          <div class="hero-actions">
+            <a class="btn btn-main" href="/#picked">进入精选片单</a>
+            <a class="btn btn-ghost" href="/#updates">看 11 月 6 日更新</a>
+          </div>
+          <div class="hero-facts">
+            <div><b>168</b>条已入库片段</div>
+            <div><b>11</b>个内容频道</div>
+            <div><b>3</b>档常见清晰度</div>
+            <div><b>11-06</b>最近一次片源补齐</div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 340 250" role="img" aria-label="播放进度与片源结构示意">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f2a65a"/>
+                <stop offset="1" stop-color="#20625c"/>
+              </linearGradient>
+            </defs>
+            <rect x="16" y="20" width="308" height="180" rx="14" fill="#243c50" stroke="#3d5a72"/>
+            <rect x="34" y="38" width="180" height="104" rx="8" fill="#1a2c3c"/>
+            <circle cx="124" cy="90" r="26" fill="url(#g1)" opacity=".92"/>
+            <path d="M117 80l18 10-18 10z" fill="#1a2c3c"/>
+            <rect x="228" y="38" width="80" height="22" rx="11" fill="#2c4a5e"/>
+            <rect x="236" y="45" width="40" height="8" rx="4" fill="#7fb2ab"/>
+            <rect x="228" y="70" width="80" height="10" rx="5" fill="#2c4a5e"/>
+            <rect x="228" y="88" width="62" height="10" rx="5" fill="#2c4a5e"/>
+            <rect x="228" y="106" width="72" height="10" rx="5" fill="#2c4a5e"/>
+            <rect x="34" y="154" width="274" height="8" rx="4" fill="#2c4a5e"/>
+            <rect x="34" y="154" width="164" height="8" rx="4" fill="#f2a65a"/>
+            <circle cx="198" cy="158" r="7" fill="#f2a65a"/>
+            <rect x="34" y="172" width="46" height="10" rx="5" fill="#3d5a72"/>
+            <rect x="90" y="172" width="46" height="10" rx="5" fill="#3d5a72"/>
+            <rect x="146" y="172" width="46" height="10" rx="5" fill="#3d5a72"/>
+            <rect x="56" y="216" width="228" height="16" rx="8" fill="#20364a" stroke="#3d5a72"/>
+            <circle cx="86" cy="224" r="5" fill="#f2a65a"/>
+            <circle cx="140" cy="224" r="5" fill="#7fb2ab"/>
+            <circle cx="194" cy="224" r="5" fill="#5f7085"/>
+            <circle cx="248" cy="224" r="5" fill="#5f7085"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <div>
+
+        <section class="section" id="field" aria-labelledby="field-title">
+          <div class="sec-head">
+            <h2 id="field-title">观看范围与内容类型</h2>
+            <a class="more" href="/#channels">按频道找 →</a>
+          </div>
+          <p class="sec-sub">先分清手里的链接是哪一类内容，再决定在哪台设备上打开。</p>
+          <div class="grid-3">
+            <article class="card">
+              <span class="kicker">直播录像</span>
+              <h3>熬夜夜谈第 12 期</h3>
+              <p>11 月 6 日入库，单段 1 小时 42 分，原始来源为直播回放存档。音轨有约 40 秒延迟抖动，已标记但不做二次剪辑。</p>
+            </article>
+            <article class="card">
+              <span class="kicker">短视频</span>
+              <h3>午后读书片段合集</h3>
+              <p>9 条竖屏切片，单条 45 秒到 3 分钟，多为书页特写与朗读摘句。手机端默认静音播放，字幕为后期补录。</p>
+            </article>
+            <article class="card">
+              <span class="kicker">访谈长内容</span>
+              <h3>创作者对谈 · 第六回</h3>
+              <p>10 月 28 日发布，73 分钟，双机位。后半段因网络波动降过一次码率，画面在当前版本里按章节分别标注。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="picked" aria-labelledby="picked-title">
+          <div class="sec-head">
+            <h2 id="picked-title">精选片单：先看这四组</h2>
+            <span class="more">按观看看点排序</span>
+          </div>
+          <div class="feature-grid">
+            <article class="feat big">
+              <img src="https://picsum.photos/seed/punimai-night12/720/420" width="720" height="420" loading="lazy" alt="夜间室内直播场景，桌面台灯与麦克风" style="object-fit:cover">
+              <div class="feat-body">
+                <span class="kicker">主推</span>
+                <h3>夜谈第 12 期：谈内容节奏的那 18 分钟</h3>
+                <p>第 3 章节起谈“一条片子多长才不拖”，举了三条自己早期短视频的时长与完播数据。可播放清晰度 1080P/720P/480P，480P 在 4G 下缓冲最快。</p>
+                <div class="meta"><span>11-06 更新</span><span class="dot">·</span><span>1 小时 42 分</span><span class="dot">·</span><span>3 档清晰度</span></div>
+              </div>
+            </article>
+            <article class="feat">
+              <img src="https://picsum.photos/seed/punimai-reading/520/320" width="520" height="320" loading="lazy" alt="书页特写与一杯放在木质桌面的茶" style="object-fit:cover">
+              <div class="feat-body">
+                <h3>午后读书：短句与停顿</h3>
+                <p>6 条朗读切片，语速比夜谈慢约三成，适合安静环境外放。</p>
+                <div class="meta"><span>11-03</span><span class="dot">·</span><span>共 14 分</span></div>
+              </div>
+            </article>
+            <article class="feat">
+              <img src="https://picsum.photos/seed/punimai-talk6/520/320" width="520" height="320" loading="lazy" alt="两人对谈的双机位录制画面" style="object-fit:cover">
+              <div class="feat-body">
+                <h3>对谈第六回：设备之后</h3>
+                <p>聊录音设备升级后反而掉粉的经历，第 41 分钟有具体数据对比。</p>
+                <div class="meta"><span>10-28</span><span class="dot">·</span><span>73 分钟</span></div>
+              </div>
+            </article>
+            <article class="feat">
+              <img src="https://picsum.photos/seed/punimai-livecut/520/320" width="520" height="320" loading="lazy" alt="直播画面截图，屏幕右侧有评论滚动区" style="object-fit:cover">
+              <div class="feat-body">
+                <h3>直播切片：三分钟答观众问</h3>
+                <p>把夜谈里被追问最多的三段问答单独剪出，每段带原时间戳。</p>
+                <div class="meta"><span>11-05</span><span class="dot">·</span><span>3 段</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="updates" aria-labelledby="updates-title">
+          <div class="sec-head">
+            <h2 id="updates-title">最新更新记录</h2>
+            <span class="more">以片源入库日期为准</span>
+          </div>
+          <ul class="update-list">
+            <li>
+              <span class="date">11-06</span>
+              <span class="u-body"><a href="/#deep">夜谈第 12 期补齐 1080P 片源</a><p>原 720P 版本保留，新增 480P 低流量档；进度条拖动后位置改为本地保存。</p></span>
+              <span class="badge">片源</span>
+            </li>
+            <li>
+              <span class="date">11-05</span>
+              <span class="u-body"><a href="/#picked">直播切片“三分钟答观众问”上线</a><p>共 3 段，均带原直播时间戳，便于回到夜谈正片对应位置。</p></span>
+              <span class="badge">切片</span>
+            </li>
+            <li>
+              <span class="date">11-04</span>
+              <span class="u-body"><a href="/#faq">移动端竖屏播放的可视区域调整</a><p>下边框不再压住字幕行，安卓 Chrome 与 iOS Safari 各验证一次。</p></span>
+              <span class="badge">播放页</span>
+            </li>
+            <li>
+              <span class="date">11-02</span>
+              <span class="u-body"><a href="/#channels">新增频道“书页与朗读”</a><p>原有“短视频”频道下的 9 条朗读切片迁入，旧链接仍可打开。</p></span>
+              <span class="badge">频道</span>
+            </li>
+            <li>
+              <span class="date">10-29</span>
+              <span class="u-body"><a href="/#rank">10 月热度榜结算</a><p>按播放完成率排序，前三名分别是夜谈第 11 期、对谈第五回、读书切片合集。</p></span>
+              <span class="badge">榜单</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="channels" aria-labelledby="channels-title">
+          <div class="sec-head">
+            <h2 id="channels-title">频道分类入口</h2>
+            <span class="more">共 11 个频道</span>
+          </div>
+          <p class="sec-sub">按能搜到的具体类别命名，点进去只看这一类的片源清单。</p>
+          <div class="tag-index">
+            <a href="/#picked">直播录像<span class="n">46</span></a>
+            <a href="/#picked">夜谈长视频<span class="n">18</span></a>
+            <a href="/#picked">短视频切片<span class="n">57</span></a>
+            <a href="/#picked">书页与朗读<span class="n">9</span></a>
+            <a href="/#picked">双人对谈<span class="n">7</span></a>
+            <a href="/#picked">观众问答剪辑<span class="n">12</span></a>
+            <a href="/#picked">幕后与设备<span class="n">6</span></a>
+            <a href="/#picked">旅行随手拍<span class="n">8</span></a>
+            <a href="/#picked">厨房与日常<span class="n">5</span></a>
+            <a href="/#picked">节日特别篇<span class="n">3</span></a>
+            <a href="/#picked">旧档回看<span class="n">11</span></a>
+          </div>
+        </section>
+
+        <section class="section" id="deep" aria-labelledby="deep-title">
+          <div class="sec-head">
+            <h2 id="deep-title">深度解析：在线播放里被忽略的三件事</h2>
+            <span class="more">可核对 · 可反驳</span>
+          </div>
+          <div class="deep">
+            <p class="deep-lead">下面三条判断都建立在具体条目上，欢迎拿别的片段来反驳。判断本身不是结论，只是把对比对象摆出来。</p>
+
+            <h3>一、480P 不一定更“糊”，夜晚直播场景反而更容易看清人脸</h3>
+            <p>夜谈第 12 期有三个清晰度档。1080P 版在第 47 分到 52 分之间，因为原始直播码率不足，暗部噪点反而被放大，人脸轮廓在弱光下比 480P 更散。480P 版经过一次降采样，噪点被抹平，轮廓更干净，代价是桌面小字看不清。</p>
+            <div class="callout"><b>可核对：</b>打开同一段，暂停在 48:30，对比 1080P 与 480P 下的下颌线与背景书架边缘。若你看到 1080P 更锐利，这条判断就站不住。</div>
+            <table class="mini-table">
+              <tr><th>清晰度</th><th>首帧加载</th><th>10 分钟流量</th><th>适合</th></tr>
+              <tr><td><b>1080P</b></td><td>2.4 秒</td><td>约 610MB</td><td>桌面有线网、看细节</td></tr>
+              <tr><td><b>720P</b></td><td>1.6 秒</td><td>约 320MB</td><td>居家 Wi-Fi 常看</td></tr>
+              <tr><td><b>480P</b></td><td>0.9 秒</td><td>约 150MB</td><td>通勤 4G、弱光场景</td></tr>
+            </table>
+
+            <h3>二、直播录像的“时间戳”比章节标题更值得保留</h3>
+            <p>对谈第六回原片 73 分钟，站点后来补了 5 个章节标题。观众回访时更多是回到某个具体时间点，而不是从头看某一章。11 月 1 日到 11 月 6 日间的回到播放记录里，带时间戳的分享链接被打开 1,340 次，带章节标题的入口被打开 286 次。比例约 4.7 比 1。</p>
+            <p>这里的因果不能倒推成“章节没用”。更可能的解释是：时间戳能精确到一个提问的起点，章节标题要重新读一遍才能定位。夜谈第 12 期那 18 分钟关于内容节奏的讨论，被分享最多的起点是 1:03:20，而不是章节开头 1:01:00。</p>
+
+            <h3>三、移动端进度丢失，多数不是播放器问题</h3>
+            <p>11 月 4 日到 11 月 6 日接到 23 条“看到一半退出再进就回开头”的反馈。逐条核对后发现：17 条发生在 iOS Safari 开启“低电量模式”时，浏览器在切后台时冻结了本地存储写入；4 条来自清理类工具，剩余 2 条才是播放器自身进度回调延迟。修复方式里，能覆盖全部情形的是手动收藏时间戳，而不是反复重装播放器。</p>
+            <div class="callout"><b>说法差异：</b>有观众在 11 月 5 日的评论里认为“换浏览器就好了”，但对照记录显示，同一台手机换到 Chrome 后仍有 3 条复现。这条转述只能算个人经验，不足以作为通用结论。</div>
+          </div>
+        </section>
+
+        <section class="section" id="guide" aria-labelledby="guide-title">
+          <div class="sec-head">
+            <h2 id="guide-title">在线播放体验指南</h2>
+            <span class="more">4 步走完</span>
+          </div>
+          <ol class="steps">
+            <li>
+              <h3>先确认片源来源</h3>
+              <p>直播录像和短视频切片的原始平台不同，缓冲表现也不一样。条目页会写明来源，同一片段不会混用两种来源。</p>
+            </li>
+            <li>
+              <h3>按场景选清晰度</h3>
+              <p>弱光夜谈选 480P，白天书页朗读选 720P，桌面看细节再切 1080P。切档后进度保留在同一时间点。</p>
+            </li>
+            <li>
+              <h3>把关键时间点记下来</h3>
+              <p>遇到值得回看的段落，用条目页的时间戳按钮记录，不依赖浏览器自动保存的播放进度。</p>
+            </li>
+            <li>
+              <h3>播放异常先换网络再看设备</h3>
+              <p>卡顿先切 720P 试一次；仍卡则换 Wi-Fi 与 4G 对照。两轮都不行，再反馈具体条目名与时间点。</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" id="faq" aria-labelledby="faq-title">
+          <div class="sec-head">
+            <h2 id="faq-title">常见问题</h2>
+            <span class="more">按提问顺序排列</span>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>直播录像和短视频切片，在手机上播放有什么区别？</summary>
+              <div class="faq-body"><p>直播录像时长普遍超过 40 分钟，首次缓冲依赖网络稳定，建议 720P 起播；短视频切片多在 3 分钟内，首帧快，但竖屏比例多，横屏播放时两侧留白较宽。夜谈第 12 期属于前者，读书切片属于后者。</p></div>
+            </details>
+            <details>
+              <summary>480P 的夜谈第 12 期真的更清楚吗？</summary>
+              <div class="faq-body"><p>仅限弱光段落的轮廓。桌面小字、字幕边角在 1080P 下更清楚。48:30 附近是最容易看出差别的位置，可以自己暂停对比。</p></div>
+            </details>
+            <details>
+              <summary>为什么退出后再进来，播放进度回到开头？</summary>
+              <div class="faq-body"><p>多数与浏览器在后台冻结存储写入有关，低电量模式、清理工具都会触发。手动收藏时间戳更可靠。11 月 4 日后新入库的片源已改为分段时间记录。</p></div>
+            </details>
+            <details>
+              <summary>对谈第六回的章节标题是谁写的？</summary>
+              <div class="faq-body"><p>由维护者按原片内容整理的 5 个章节，标题措辞取自对应段落里出现的原话，未经原作者确认，因此标注为“整理版章节”。</p></div>
+            </details>
+            <details>
+              <summary>旧档回看里的片段还能打开吗？</summary>
+              <div class="faq-body"><p>能。11 月 2 日频道调整时把 9 条朗读切片迁入“书页与朗读”，旧链接保留跳转，仅改了所在频道归类，片源本身未重新转码。</p></div>
+            </details>
+            <details>
+              <summary>热度榜按什么排？</summary>
+              <div class="faq-body"><p>按播放完成率排，不按播放次数。这样能避免标题党片段占位。10 月榜单结算日为 10 月 29 日，前三名可在榜单板块看到。</p></div>
+            </details>
+          </div>
+        </section>
+
+        <section class="section" id="comments" aria-labelledby="comments-title">
+          <div class="sec-head">
+            <h2 id="comments-title">观众评论</h2>
+            <span class="more">保留原话语气</span>
+          </div>
+          <div class="comment-grid">
+            <div class="comment">
+              <div class="who"><span class="avatar">阿</span>阿澈<span class="time">11-06 22:14</span></div>
+              <p>夜谈第 12 期 1:03:20 那段把三条短视频的时长和完播数摆在一起讲，比泛泛谈节奏有用。</p>
+              <span class="quote">指向条目：夜谈第 12 期</span>
+            </div>
+            <div class="comment">
+              <div class="who"><span class="avatar">林</span>林间收音<span class="time">11-06 18:02</span></div>
+              <p>480P 那段我试了，48:30 附近人脸确实干净些，但书架上的字完全糊掉。看你要什么。</p>
+              <span class="quote">指向条目：夜谈第 12 期 480P 档</span>
+            </div>
+            <div class="comment">
+              <div class="who"><span class="avatar">豆</span>豆子不发芽<span class="time">11-05 21:40</span></div>
+              <p>对谈第六回第 41 分钟的数据对比说得挺实，但前面 20 分钟铺垫太长，我是拖过去的。</p>
+              <span class="quote">指向条目：对谈第六回</span>
+            </div>
+            <div class="comment">
+              <div class="who"><span class="avatar">V</span>Vera<span class="time">11-05 09:27</span></div>
+              <p>读书切片的字幕是后补的，有两处跟原话对不上，第二条 1:12 那里尤其明显。</p>
+              <span class="quote">指向条目：午后读书合集</span>
+            </div>
+            <div class="comment">
+              <div class="who"><span class="avatar">老</span>老周看片<span class="time">11-04 23:55</span></div>
+              <p>进度丢失那事我碰到了，iOS 低电量模式，果然是存储写入被冻结，收藏时间戳后没再出问题。</p>
+              <span class="quote">指向条目：11 月 4 日播放页调整</span>
+            </div>
+            <div class="comment">
+              <div class="who"><span class="avatar">南</span>南边有雨<span class="time">11-03 14:18</span></div>
+              <p>切片三分钟答观众问剪得利落，但第三段结束得太突然，原直播后面还有一句回应没放进去。</p>
+              <span class="quote">指向条目：观众问答剪辑</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="news" aria-labelledby="news-title">
+          <div class="sec-head">
+            <h2 id="news-title">相关资讯</h2>
+            <span class="more">外部转述与站内记录</span>
+          </div>
+          <ul class="news-list">
+            <li><span class="nb">转述</span><span class="nt"><a href="/#deep">有观众在 11 月 5 日评论里称“换浏览器能解决进度丢失”</a><p>对照 23 条反馈后，换浏览器仅对 3 条无效记录中的部分情形有效，不作为通用方案。</p></span></li>
+            <li><span class="nb">事实</span><span class="nt"><a href="/#updates">夜谈第 12 期 1080P 片源 11 月 6 日入库</a><p>原始直播存档码率不足，1080P 在暗部的噪点比 720P 明显，条目页已注明。</p></span></li>
+            <li><span class="nb">推测</span><span class="nt"><a href="/#rank">10 月热度榜前三名与 9 月完全重复</a><p>可能与片源总量增长有限有关，尚无片方说明，仅从 46 条直播录像的完成率分布推测。</p></span></li>
+          </ul>
+        </section>
+
+        <section class="section" id="rank" aria-labelledby="rank-title">
+          <div class="sec-head">
+            <h2 id="rank-title">10 月播放完成率榜</h2>
+            <span class="more">结算日 10-29</span>
+          </div>
+          <ol class="rank-list">
+            <li><span class="rk-title">夜谈第 11 期：谈早期设备</span><span class="rk-note">完成率 78%</span></li>
+            <li><span class="rk-title">对谈第五回：剪辑习惯</span><span class="rk-note">完成率 71%</span></li>
+            <li><span class="rk-title">午后读书合集 · 第一辑</span><span class="rk-note">完成率 66%</span></li>
+            <li><span class="rk-title">夜谈第 10 期：谈片头三秒</span><span class="rk-note">完成率 63%</span></li>
+            <li><span class="rk-title">幕后与设备：麦克风换型记录</span><span class="rk-note">完成率 58%</span></li>
+            <li><span class="rk-title">节日特别篇 · 中秋夜谈</span><span class="rk-note">完成率 54%</span></li>
+          </ol>
+        </section>
+
+        <section class="section" id="recommend" aria-labelledby="recommend-title">
+          <div class="sec-head">
+            <h2 id="recommend-title">相关推荐</h2>
+            <span class="more">按主题邻近度</span>
+          </div>
+          <div class="tag-index">
+            <a href="/#picked">夜谈第 11 期完整回看</a>
+            <a href="/#picked">剪辑习惯对谈第五回</a>
+            <a href="/#picked">书页与朗读精选九条</a>
+            <a href="/#picked">直播录像清晰度对比笔记</a>
+            <a href="/#picked">观众问答剪辑第三段</a>
+            <a href="/#picked">麦克风换型幕后记录</a>
+            <a href="/#picked">旧档回看入口汇总</a>
+          </div>
+        </section>
+
+        <section class="section" id="timeline" aria-labelledby="timeline-title">
+          <div class="sec-head">
+            <h2 id="timeline-title">片源整理时间线</h2>
+            <span class="more">10 月 10 日至 11 月 6 日</span>
+          </div>
+          <ul class="update-list">
+            <li><span class="date">10-10</span><span class="u-body"><a href="/#channels">旧档回看频道建立</a><p>首批 11 条早期直播录像迁入，统一补写时长与原始日期。</p></span><span class="badge">建库</span></li>
+            <li><span class="date">10-18</span><span class="u-body"><a href="/#deep">对谈系列开始补章节标题</a><p>第五回先做，第六回延后至 10 月 28 日发布后整理。</p></span><span class="badge">整理</span></li>
+            <li><span class="date">10-28</span><span class="u-body"><a href="/#picked">对谈第六回发布</a><p>73 分钟双机位，后段降码率，按章节分别标注。</p></span><span class="badge">发布</span></li>
+            <li><span class="date">11-02</span><span class="u-body"><a href="/#channels">书页与朗读频道上线</a><p>9 条竖屏切片迁入，旧链接保留跳转。</p></span><span class="badge">频道</span></li>
+            <li><span class="date">11-06</span><span class="u-body"><a href="/#updates">夜谈第 12 期补齐片源</a><p>新增 480P 档与本地进度保存，公告条同步更新。</p></span><span class="badge">补档</span></li>
+          </ul>
+        </section>
+
+      </div>
+
+      <aside class="sidebar" aria-label="侧栏导航与数据">
+        <div class="side-card">
+          <h2>栏目导航</h2>
+          <nav class="side-nav" id="sideNav" aria-label="页内导航">
+            <a href="/#field">观看范围与类型</a>
+            <a href="/#picked">精选片单</a>
+            <a href="/#updates">最新更新记录</a>
+            <a href="/#channels">频道分类入口</a>
+            <a href="/#deep">深度解析</a>
+            <a href="/#guide">播放体验指南</a>
+            <a href="/#faq">常见问题</a>
+            <a href="/#comments">观众评论</a>
+            <a href="/#news">相关资讯</a>
+            <a href="/#rank">播放完成率榜</a>
+            <a href="/#recommend">相关推荐</a>
+            <a href="/#timeline">片源时间线</a>
+          </nav>
+        </div>
+        <div class="side-card">
+          <h2>片源概况</h2>
+          <ul class="side-stats">
+            <li><span>直播录像</span><b>46 条</b></li>
+            <li><span>短视频切片</span><b>57 条</b></li>
+            <li><span>访谈长内容</span><b>7 条</b></li>
+            <li><span>旧档回看</span><b>11 条</b></li>
+            <li><span>最近入库</span><b>11-06</b></li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h2>今天可看</h2>
+          <p style="font-size:var(--fs-s);color:var(--muted);margin:0 0 8px">夜谈第 12 期 480P 档首帧 0.9 秒，通勤路上最省流量的一档。</p>
+          <a class="btn btn-main" href="/#picked" style="padding:8px 16px">去片单</a>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#f2a65a" opacity=".16"/>
+            <circle cx="32" cy="32" r="17" fill="none" stroke="#f2a65a" stroke-width="3"/>
+            <path d="M27 23l16 9-16 9z" fill="#f2a65a"/>
+          </svg>
+          <span>朴妮唛</span>
+        </div>
+        <p class="footer-pos">把直播回放、竖屏切片与对谈长片按来源和清晰度分开登记，播放前就能判断哪一档适合当前网络。</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h3>内容频道</h3>
+          <ul>
+            <li><a href="/#channels">直播录像</a></li>
+            <li><a href="/#channels">夜谈长视频</a></li>
+            <li><a href="/#channels">短视频切片</a></li>
+            <li><a href="/#channels">书页与朗读</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>使用入口</h3>
+          <ul>
+            <li><a href="/#guide">播放体验指南</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+            <li><a href="/#rank">播放完成率榜</a></li>
+            <li><a href="/#timeline">片源时间线</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>说明</h3>
+          <ul>
+            <li><a href="/#updates">更新记录</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#comments">观众评论</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="note">页面所列条目、播放数据、评论与日期均为示例整理数据，仅用于展示内容组织方式；片源信息以条目页标注为准。页脚更新时间 2026-11-08，对应正文中 11 月 6 日的片源补齐与 11 月 4 日的播放页调整两项。</span>
+      <span>© 2026 朴妮唛 内容索引 · 示例站点</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  var menuBtn = document.getElementById("menuBtn");
+  var mainNav = document.getElementById("mainNav");
+  if(menuBtn && mainNav){
+    menuBtn.addEventListener("click", function(){
+      var open = mainNav.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      menuBtn.setAttribute("aria-label", open ? "收起导航菜单" : "展开导航菜单");
+    });
+    mainNav.addEventListener("click", function(e){
+      if(e.target.tagName === "A" && window.innerWidth <= 900){
+        mainNav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded","false");
+        menuBtn.setAttribute("aria-label","展开导航菜单");
+      }
+    });
+  }
+
+  var searchBtn = document.getElementById("searchBtn");
+  var searchPanel = document.getElementById("searchPanel");
+  var searchInput = document.getElementById("searchInput");
+  var searchGo = document.getElementById("searchGo");
+  var searchResult = document.getElementById("searchResult");
+
+  if(searchBtn && searchPanel){
+    searchBtn.addEventListener("click", function(){
+      var open = searchPanel.classList.toggle("open");
+      searchBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      if(open && searchInput){ searchInput.focus(); }
+    });
+  }
+
+  var index = [
+    {t:"夜谈第 12 期：谈内容节奏的那 18 分钟", id:"picked", k:"直播录像 夜谈 1080P 480P 11-06"},
+    {t:"直播切片：三分钟答观众问", id:"picked", k:"短视频 切片 问答 11-05"},
+    {t:"午后读书：短句与停顿", id:"picked", k:"书页与朗读 短视频 朗读 11-03"},
+    {t:"对谈第六回：设备之后", id:"picked", k:"双人对谈 访谈 73 分钟 10-28"},
+    {t:"夜谈第 12 期补齐 1080P 片源", id:"updates", k:"更新 片源 480P 11-06"},
+    {t:"移动端进度丢失排查", id:"deep", k:"深度解析 进度 低电量 iOS"},
+    {t:"480P 与 1080P 对照表", id:"deep", k:"深度解析 清晰度 流量 加载"},
+    {t:"在线播放体验指南", id:"guide", k:"指南 步骤 清晰度 时间戳"},
+    {t:"直播录像和短视频切片的播放区别", id:"faq", k:"FAQ 播放 竖屏 缓冲"},
+    {t:"10 月播放完成率榜", id:"rank", k:"榜单 完成率 10-29"},
+    {t:"片源整理时间线", id:"timeline", k:"时间线 10-10 11-02 11-06"},
+    {t:"频道分类入口", id:"channels", k:"频道 分类 旧档回看 幕后与设备"}
+  ];
+
+  function doSearch(){
+    if(!searchInput || !searchResult){ return; }
+    var q = searchInput.value.trim().toLowerCase();
+    if(!q){
+      searchResult.textContent = "请输入条目名或关键词。";
+      return;
+    }
+    var hits = index.filter(function(item){
+      return (item.t + " " + item.k).toLowerCase().indexOf(q) > -1;
+    });
+    if(hits.length === 0){
+      searchResult.innerHTML = '没有找到与“' + q.replace(/</g,"&lt;") + '”匹配的条目。可以试试点上方导航，或换用“夜谈”“480P”“对谈”这类更短的关键词。';
+      return;
+    }
+    var html = "找到 " + hits.length + " 条：<ul>";
+    hits.slice(0,8).forEach(function(h){
+      html += '<li><a href="/#' + h.id + '">' + h.t + "</a></li>";
+    });
+    html += "</ul>";
+    searchResult.innerHTML = html;
+  }
+
+  if(searchGo){ searchGo.addEventListener("click", doSearch); }
+  if(searchInput){
+    searchInput.addEventListener("keydown", function(e){
+      if(e.key === "Enter"){ e.preventDefault(); doSearch(); }
+    });
+  }
+
+  var toTop = document.getElementById("toTop");
+  if(toTop){
+    var onScroll = function(){
+      if(window.scrollY > 480){
+        toTop.classList.add("show");
+      }else{
+        toTop.classList.remove("show");
+      }
+    };
+    window.addEventListener("scroll", onScroll, {passive:true});
+    onScroll();
+    toTop.addEventListener("click", function(){
+      window.scrollTo({top:0, behavior:"smooth"});
+    });
+  }
+
+  var sideNav = document.getElementById("sideNav");
+  if(sideNav){
+    var sideLinks = Array.prototype.slice.call(sideNav.querySelectorAll("a"));
+    var targets = sideLinks.map(function(a){
+      var id = a.getAttribute("href").replace("/#","");
+      return document.getElementById(id);
+    });
+    var onSideScroll = function(){
+      var pos = window.scrollY + 160;
+      var current = 0;
+      for(var i=0;i<targets.length;i++){
+        var el = targets[i];
+        if(el && el.offsetTop <= pos){ current = i; }
+      }
+      sideLinks.forEach(function(a,i){
+        a.classList.toggle("current", i === current);
+      });
+    };
+    window.addEventListener("scroll", onSideScroll, {passive:true});
+    onSideScroll();
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "朴妮唛",
+  "description": "朴妮唛在线播放相关作品的观看索引，整理直播录像、短视频切片、访谈长内容的清晰度与条目信息。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "直播录像和短视频切片，在手机上播放有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "直播录像时长普遍超过 40 分钟，首次缓冲依赖网络稳定，建议 720P 起播；短视频切片多在 3 分钟内，首帧快，但竖屏比例多。夜谈第 12 期属于前者，读书切片属于后者。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "480P 的夜谈第 12 期真的更清楚吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "仅限弱光段落的轮廓。桌面小字、字幕边角在 1080P 下更清楚。48:30 附近是最容易看出差别的位置。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么退出后再进来，播放进度回到开头？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多数与浏览器在后台冻结存储写入有关，低电量模式、清理工具都会触发。手动收藏时间戳更可靠，11 月 4 日后新入库片源已改为分段时间记录。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "对谈第六回的章节标题是谁写的？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "由维护者按原片内容整理的 5 个章节，标题措辞取自对应段落里出现的原话，未经原作者确认，标注为整理版章节。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "旧档回看里的片段还能打开吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能。11 月 2 日频道调整时把 9 条朗读切片迁入书页与朗读，旧链接保留跳转，仅改频道归类，片源未重新转码。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "热度榜按什么排？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "按播放完成率排，不按播放次数。10 月榜单结算日为 10 月 29 日，前三名为夜谈第 11 期、对谈第五回、午后读书合集第一辑。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+                                                                                                </html>
