@@ -1,0 +1,1213 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>艺舞吧-舞蹈学习与舞种选择指南</title>
+<meta name="description" content="艺舞吧是面向成人舞蹈爱好者的舞种选择与练习指南，梳理爵士舞、中国古典舞、街舞、芭蕾形体、拉丁舞的课程强度、考级规则与场馆选择方法，并提供每周训练安排与常见受伤应对建议。">
+<meta name="keywords" content="艺舞吧">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b1b3d'/%3E%3Cpath d='M20 46c6-2 9-8 9-16 0-6 3-9 7-9 3 0 5 2 5 5 0 6-7 8-7 15 0 5 3 8 8 8' fill='none' stroke='%23f2b34b' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='47' cy='16' r='4' fill='%23e86f51'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#241b2e;
+  --ink-soft:#4b3f5a;
+  --muted:#7b6f88;
+  --paper:#faf7f4;
+  --card:#ffffff;
+  --plum:#2b1b3d;
+  --plum-2:#3d2a53;
+  --amber:#f2b34b;
+  --coral:#e86f51;
+  --teal:#2f7f74;
+  --line:#e4dcd6;
+  --line-strong:#cfc3ba;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 2px 4px rgba(36,27,46,.05),0 10px 26px rgba(36,27,46,.07);
+  --shadow-hover:0 4px 8px rgba(36,27,46,.07),0 14px 34px rgba(36,27,46,.11);
+  --space:24px;
+  --announce-h:40px;
+  --header-h:66px;
+  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  font-size:16px;
+  line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.32;font-weight:700}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 1em;padding-left:1.25em}
+li{margin-bottom:.4em}
+button{font-family:inherit}
+
+/* ---------- 吸顶公告条 ---------- */
+.announce{
+  position:sticky;top:0;z-index:60;
+  height:var(--announce-h);
+  display:flex;align-items:center;
+  background:var(--plum);
+  color:#f6eef5;
+  font-size:13.5px;
+  overflow:hidden;
+}
+.announce .wrap{
+  width:100%;max-width:1240px;margin:0 auto;padding:0 18px;
+  display:flex;align-items:center;gap:10px;
+}
+.announce .tag{
+  flex:0 0 auto;background:var(--coral);color:#fff;
+  font-size:11.5px;letter-spacing:.08em;padding:2px 8px;border-radius:20px;font-weight:600;
+}
+.announce p{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.announce a{color:var(--amber);border-bottom:1px solid rgba(242,179,75,.5)}
+
+/* ---------- 吸顶页头 ---------- */
+.site-header{
+  position:sticky;top:var(--announce-h);z-index:55;
+  background:rgba(250,247,244,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1240px;margin:0 auto;padding:0 18px;
+  min-height:var(--header-h);
+  display:flex;align-items:center;gap:18px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.brand svg{width:36px;height:36px;flex:0 0 auto}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:.02em;color:var(--plum)}
+.brand-sub{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.14em}
+.main-nav{margin-left:8px}
+.main-nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.main-nav a{
+  display:block;padding:8px 11px;border-radius:8px;font-size:14.5px;color:var(--ink-soft);
+  transition:background .15s,color .15s;
+}
+.main-nav a:hover,.main-nav a:focus-visible{background:#f0e8e2;color:var(--plum)}
+.nav-toggle{
+  display:none;margin-left:auto;align-items:center;gap:6px;
+  border:1px solid var(--line-strong);background:var(--card);color:var(--plum);
+  border-radius:9px;padding:7px 12px;font-size:14px;cursor:pointer;
+}
+.nav-toggle:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.header-tools{display:flex;align-items:center;gap:10px;margin-left:auto}
+.search-box{display:flex;align-items:center;background:var(--card);border:1px solid var(--line-strong);border-radius:10px;padding:3px 4px 3px 10px;gap:6px}
+.search-box svg{width:15px;height:15px;flex:0 0 auto;color:var(--muted)}
+.search-box input{
+  border:0;background:transparent;font:inherit;font-size:14px;width:132px;padding:5px 0;color:var(--ink);
+}
+.search-box input:focus{outline:none}
+.search-box:focus-within{border-color:var(--teal);box-shadow:0 0 0 3px rgba(47,127,116,.12)}
+.search-box button{
+  border:0;background:var(--plum);color:#fff;border-radius:7px;padding:5px 10px;font-size:13px;cursor:pointer;
+}
+.search-box button:hover{background:var(--plum-2)}
+.search-result{
+  font-size:13px;color:var(--teal);max-width:1240px;margin:0 auto;padding:0 18px;
+  display:none;
+}
+.search-result.show{display:block;padding-bottom:10px}
+.search-result.empty{color:var(--coral)}
+.entry-btn{
+  display:inline-block;background:var(--amber);color:var(--plum);font-weight:700;font-size:14px;
+  padding:8px 14px;border-radius:10px;white-space:nowrap;
+}
+.entry-btn:hover{background:#f6c266}
+
+/* ---------- 通用版式 ---------- */
+.wrap{max-width:1240px;margin:0 auto;padding:0 18px}
+section[id]{scroll-margin-top:calc(var(--announce-h) + var(--header-h) + 12px)}
+.section{padding:44px 0}
+.section + .section{border-top:1px solid var(--line)}
+.section-head{margin-bottom:22px;max-width:760px}
+.kicker{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--teal);
+  margin-bottom:7px;
+}
+.section-head h2{font-size:26px;color:var(--plum);letter-spacing:.01em}
+.section-head .lead{margin-top:9px;color:var(--ink-soft);font-size:15.5px}
+main{display:block}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#2b1b3d 0%,#3a2450 52%,#4a2c52 100%);
+  color:#f8f1f6;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(560px 300px at 84% 16%,rgba(242,179,75,.20),transparent 70%),
+    radial-gradient(420px 260px at 12% 88%,rgba(232,111,81,.18),transparent 72%);
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;max-width:1240px;margin:0 auto;padding:54px 18px 58px;
+  display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:44px;align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:.1em;color:#f5d9a8;
+  border:1px solid rgba(242,179,75,.45);border-radius:20px;padding:4px 12px;
+}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--amber);display:inline-block}
+.hero h1{
+  font-size:clamp(38px,5.6vw,62px);
+  letter-spacing:.03em;margin:16px 0 14px;
+  line-height:1.08;
+  color:#fff;
+}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .hero-desc{
+  font-size:16.5px;color:#e3d5e3;max-width:520px;margin-bottom:26px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary,.btn-ghost{
+  display:inline-block;border-radius:11px;padding:12px 22px;font-size:15px;font-weight:700;
+  transition:transform .15s,background .15s;
+}
+.btn-primary{background:var(--amber);color:var(--plum)}
+.btn-primary:hover{background:#f6c266;transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(248,241,246,.42);color:#f8f1f6}
+.btn-ghost:hover{background:rgba(248,241,246,.1);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap}
+.hero-stats div{min-width:86px}
+.hero-stats strong{display:block;font-size:24px;color:var(--amber);font-weight:800;line-height:1.2}
+.hero-stats span{font-size:12.5px;color:#c6b4c9;letter-spacing:.04em}
+.hero-art{position:relative;min-height:340px}
+.hero-art svg{width:100%;height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
+.hero-art .art-caption{
+  margin-top:14px;font-size:12.5px;color:#b9a7bf;text-align:right;letter-spacing:.03em;
+}
+
+/* ---------- 概览板块：不等权网格 ---------- */
+.overview-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.ov-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;box-shadow:var(--shadow);
+}
+.ov-card.wide{grid-column:span 2;background:linear-gradient(150deg,#fff 0%,#fdf5e8 100%)}
+.ov-card h3{font-size:16px;color:var(--plum);margin-bottom:8px}
+.ov-card p{font-size:14px;color:var(--ink-soft);margin-bottom:0}
+.ov-card .num{font-size:29px;font-weight:800;color:var(--teal);line-height:1.1;margin-bottom:4px;display:block}
+.ov-card .num small{font-size:13px;font-weight:600;color:var(--muted);margin-left:4px}
+
+/* ---------- 精选推荐：网格卡片 ---------- */
+.pick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pick-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);
+  transition:transform .18s,box-shadow .18s;
+}
+.pick-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.pick-card .thumb{aspect-ratio:16/9;width:100%;object-fit:cover}
+.pick-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.pick-tag{
+  display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;
+  color:var(--teal);background:rgba(47,127,116,.1);padding:2px 9px;border-radius:20px;margin-bottom:9px;align-self:flex-start;
+}
+.pick-card h3{font-size:17px;margin-bottom:8px;color:var(--plum)}
+.pick-card p{font-size:14px;color:var(--ink-soft);flex:1}
+.pick-meta{font-size:12.5px;color:var(--muted);margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- 最新更新：紧凑列表 ---------- */
+.update-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.update-list li{
+  display:grid;grid-template-columns:86px minmax(0,1fr) auto;gap:16px;align-items:baseline;
+  padding:13px 2px;border-bottom:1px solid var(--line);margin:0;
+}
+.update-list time{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.update-list .u-title{font-size:15px;color:var(--ink)}
+.update-list .u-title a{border-bottom:1px solid transparent}
+.update-list .u-title a:hover{color:var(--teal);border-bottom-color:var(--teal)}
+.update-list .u-type{font-size:12px;color:var(--muted);white-space:nowrap;border:1px solid var(--line-strong);border-radius:20px;padding:1px 9px}
+
+/* ---------- 分类入口：标签索引 ---------- */
+.tag-index{display:flex;flex-wrap:wrap;gap:10px}
+.tag-index a{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--card);border:1px solid var(--line-strong);border-radius:10px;
+  padding:9px 14px;font-size:14.5px;color:var(--ink-soft);
+  transition:border-color .15s,color .15s,background .15s;
+}
+.tag-index a strong{color:var(--plum);font-weight:700}
+.tag-index a small{color:var(--muted);font-size:12px}
+.tag-index a:hover{border-color:var(--teal);color:var(--teal);background:#f2f8f6}
+
+/* ---------- 深度解析：分栏正文 ---------- */
+.analysis{
+  display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:40px;align-items:start;
+}
+.analysis .article h3{
+  font-size:19.5px;color:var(--plum);margin:30px 0 10px;padding-left:12px;border-left:4px solid var(--amber);
+}
+.analysis .article h3:first-child{margin-top:0}
+.analysis .article p{font-size:15.5px;color:var(--ink-soft)}
+.analysis .article strong{color:var(--ink)}
+.pull-quote{
+  margin:22px 0;padding:18px 20px;background:#fdf5e8;border-radius:var(--radius-sm);
+  border-left:4px solid var(--coral);font-size:15px;color:var(--ink);
+}
+.pull-quote cite{display:block;margin-top:8px;font-size:12.5px;color:var(--muted);font-style:normal}
+.checklist{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:8px 20px 18px;box-shadow:var(--shadow);position:sticky;top:calc(var(--announce-h) + var(--header-h) + 16px)}
+.checklist h3{font-size:15px;color:var(--plum);padding:12px 0 10px;border-bottom:1px dashed var(--line-strong);margin-bottom:6px}
+.checklist ol{margin:0;padding-left:1.1em}
+.checklist li{font-size:13.5px;color:var(--ink-soft);margin-bottom:9px}
+.checklist li b{color:var(--plum)}
+.compare-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px;background:var(--card)}
+.compare-table caption{text-align:left;font-size:12.5px;color:var(--muted);padding-bottom:8px}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+.compare-table th{background:#f4ece4;color:var(--plum);font-weight:700;font-size:13.5px}
+.compare-table td{color:var(--ink-soft)}
+
+/* ---------- 体验指南：编号步骤 ---------- */
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 22px;counter-reset:step}
+.steps li{
+  counter-increment:step;position:relative;padding:14px 16px 14px 58px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);margin:0;
+}
+.steps li::before{
+  content:counter(step,decimal-leading-zero);
+  position:absolute;left:16px;top:14px;font-size:17px;font-weight:800;color:var(--teal);
+  letter-spacing:.02em;
+}
+.steps li b{display:block;font-size:15px;color:var(--plum);margin-bottom:3px}
+.steps li span{font-size:13.5px;color:var(--ink-soft)}
+
+/* ---------- FAQ ---------- */
+.faq-list{display:grid;gap:10px}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:0 18px;box-shadow:var(--shadow);
+}
+details[open]{border-color:var(--line-strong)}
+summary{
+  cursor:pointer;padding:15px 0;font-size:15.5px;font-weight:700;color:var(--plum);
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";font-size:19px;font-weight:400;color:var(--teal);line-height:1;flex:0 0 auto;
+}
+details[open] summary::after{content:"–"}
+summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+details .faq-body{padding:0 0 16px;font-size:14.5px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:12px}
+
+/* ---------- 评论 ---------- */
+.comments{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.comment{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:17px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;
+}
+.comment p{font-size:14px;color:var(--ink-soft);flex:1}
+.comment .who{margin-top:12px;display:flex;align-items:center;gap:9px}
+.avatar{
+  width:32px;height:32px;border-radius:50%;background:var(--plum);color:var(--amber);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:0 0 auto;
+}
+.who .name{font-size:13.5px;font-weight:700;color:var(--plum);line-height:1.3}
+.who .ctx{font-size:11.5px;color:var(--muted);line-height:1.3}
+.stars{color:var(--amber);font-size:12.5px;letter-spacing:.1em}
+
+/* ---------- 资讯：双列小卡 ---------- */
+.news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.news-item{
+  display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:12px;box-shadow:var(--shadow);
+}
+.news-item img{width:112px;height:84px;object-fit:cover;border-radius:8px}
+.news-item h3{font-size:15px;color:var(--plum);margin-bottom:5px}
+.news-item p{font-size:13px;color:var(--ink-soft);margin:0 0 6px}
+.news-item time{font-size:12px;color:var(--muted)}
+
+/* ---------- 推荐标签 ---------- */
+.reco-tags{display:flex;flex-wrap:wrap;gap:9px}
+.reco-tags a{
+  font-size:13.5px;color:var(--plum);background:#f4ece4;border-radius:20px;padding:6px 14px;
+  transition:background .15s,color .15s;
+}
+.reco-tags a:hover{background:var(--plum);color:var(--amber)}
+
+/* ---------- 时间线 ---------- */
+.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--line-strong);margin-left:6px}
+.timeline li{position:relative;padding:0 0 20px 24px;margin:0}
+.timeline li::before{
+  content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;
+  background:var(--amber);border:2px solid var(--paper);
+}
+.timeline b{display:block;font-size:14.5px;color:var(--plum)}
+.timeline time{font-size:12.5px;color:var(--muted);display:block;margin-bottom:3px}
+.timeline span{font-size:13.5px;color:var(--ink-soft)}
+
+/* ---------- 对照面板 ---------- */
+.panel-compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.panel-compare .col{padding:20px 22px}
+.panel-compare .col + .col{border-left:1px solid var(--line);background:#fdf8f3}
+.panel-compare h3{font-size:16px;margin-bottom:10px;color:var(--plum)}
+.panel-compare .col:first-child h3{color:var(--teal)}
+.panel-compare ul{margin:0;padding-left:1.1em}
+.panel-compare li{font-size:13.8px;color:var(--ink-soft)}
+
+/* ---------- 页脚 ---------- */
+.site-footer{background:var(--plum);color:#d9cbdd;margin-top:20px;font-size:14px}
+.footer-inner{max-width:1240px;margin:0 auto;padding:46px 18px 26px}
+.footer-top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px;padding-bottom:30px;border-bottom:1px solid rgba(217,203,221,.18)}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.footer-brand svg{width:34px;height:34px}
+.footer-brand-name{font-size:18px;font-weight:800;color:#fff;letter-spacing:.02em}
+.footer-desc{font-size:13.5px;color:#b7a6bd;max-width:300px}
+.footer-col h4{font-size:13px;letter-spacing:.14em;color:var(--amber);margin-bottom:12px;font-weight:700}
+.footer-col ul{list-style:none;margin:0;padding:0}
+.footer-col li{margin-bottom:7px}
+.footer-col a{font-size:13.5px;color:#c9bbd0}
+.footer-col a:hover{color:#fff}
+.footer-note{
+  margin-top:22px;padding:14px 16px;background:rgba(255,255,255,.05);border-radius:10px;
+  font-size:12.5px;color:#b7a6bd;line-height:1.7;
+}
+.footer-bottom{
+  margin-top:20px;padding-top:18px;border-top:1px solid rgba(217,203,221,.18);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.5px;color:#a595ac;
+}
+
+/* ---------- 回到顶部 ---------- */
+.to-top{
+  position:fixed;right:18px;bottom:22px;z-index:50;
+  width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--plum);color:var(--amber);box-shadow:var(--shadow-hover);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s,transform .2s,visibility .2s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.to-top svg{width:19px;height:19px}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:30px;padding-top:40px}
+  .hero-art{min-height:0;max-width:460px}
+  .overview-grid{grid-template-columns:repeat(2,1fr)}
+  .ov-card.wide{grid-column:span 2}
+  .pick-grid{grid-template-columns:repeat(2,1fr)}
+  .analysis{grid-template-columns:1fr}
+  .checklist{position:static}
+  .comments{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:26px}
+}
+@media (max-width:768px){
+  :root{--announce-h:36px;--header-h:60px}
+  .header-inner{flex-wrap:wrap;padding-top:8px;padding-bottom:8px;gap:10px}
+  .nav-toggle{display:flex;order:3}
+  .header-tools{margin-left:auto;order:2}
+  .search-box input{width:96px}
+  .main-nav{order:4;flex-basis:100%;display:none}
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column;gap:0;padding-bottom:8px}
+  .main-nav a{padding:11px 8px;border-radius:8px;border-bottom:1px solid var(--line)}
+  .entry-btn{display:none}
+  .hero h1{font-size:clamp(32px,9vw,44px)}
+  .hero-stats{gap:20px}
+  .steps{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr}
+  .news-item{grid-template-columns:92px minmax(0,1fr)}
+  .news-item img{width:92px;height:74px}
+  .panel-compare{grid-template-columns:1fr}
+  .panel-compare .col + .col{border-left:0;border-top:1px solid var(--line)}
+  .update-list li{grid-template-columns:74px minmax(0,1fr);gap:10px}
+  .update-list .u-type{display:none}
+  .section{padding:34px 0}
+  .section-head h2{font-size:22px}
+  .footer-top{grid-template-columns:1fr}
+  .to-top{right:14px;bottom:16px;width:42px;height:42px}
+}
+@media (max-width:560px){
+  .overview-grid,.pick-grid,.comments{grid-template-columns:1fr}
+  .ov-card.wide{grid-column:span 1}
+  .hero-inner{padding-top:32px;padding-bottom:40px}
+  .compare-table{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .pick-card:hover,.btn-primary:hover,.btn-ghost:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce">
+  <div class="wrap">
+    <span class="tag">更新</span>
+    <p>11月7日更新：爵士舞入门班第9期开课名单与场馆时段表已发布，另补入古典舞身韵考级三级动作清单。<a href="/#latest">查看更新</a></p>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/#top" aria-label="艺舞吧首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="#2b1b3d"/>
+        <path d="M20 46c6-2 9-8 9-16 0-6 3-9 7-9 3 0 5 2 5 5 0 6-7 8-7 15 0 5 3 8 8 8" fill="none" stroke="#f2b34b" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="47" cy="16" r="4" fill="#e86f51"/>
+      </svg>
+      <span>
+        <span class="brand-name">艺舞吧</span>
+        <span class="brand-sub">DANCE STUDIO GUIDE</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      频道
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="主题频道导航">
+      <ul>
+        <li><a href="/#overview">舞种概览</a></li>
+        <li><a href="/#picks">精选课程</a></li>
+        <li><a href="/#latest">最新更新</a></li>
+        <li><a href="/#channels">分类入口</a></li>
+        <li><a href="/#analysis">深度解析</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <div class="search-box">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <label for="siteSearch" class="visually-hidden" style="position:absolute;left:-9999px">站内搜索</label>
+        <input id="siteSearch" type="search" placeholder="搜舞种、课程、规则" autocomplete="off">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+      <a class="entry-btn" href="/#guide">预约体验课</a>
+    </div>
+  </div>
+  <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+</header>
+
+<main id="top">
+
+  <!-- 主题首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-badge"><span></span>成人舞蹈 · 舞种选择与训练节奏</span>
+        <h1 id="heroTitle">艺舞吧</h1>
+        <p class="hero-desc">为18—45岁零基础与回炉学员整理舞种入门门槛、课时安排与场馆实地考察要点。从爵士舞第一个八拍，到中国古典舞身韵的提沉，把每周三小时练成看得见的进步。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="/#picks">看本周精选课程</a>
+          <a class="btn-ghost" href="/#guide">第一次试课怎么选</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12</strong><span>细分舞种频道</span></div>
+          <div><strong>38</strong><span>在架课程条目</span></div>
+          <div><strong>9</strong><span>合作排练厅</span></div>
+          <div><strong>2026.11</strong><span>内容核对时间</span></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 420 340" role="img" aria-label="抽象舞者剪影与节拍弧线构成的图形">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f2b34b"/>
+              <stop offset="1" stop-color="#e86f51"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#5f3f78"/>
+              <stop offset="1" stop-color="#8d5f8f"/>
+            </linearGradient>
+          </defs>
+          <circle cx="212" cy="168" r="132" fill="none" stroke="rgba(242,179,75,.28)" stroke-width="1.4"/>
+          <circle cx="212" cy="168" r="104" fill="none" stroke="rgba(242,179,75,.18)" stroke-width="1.2"/>
+          <path d="M60 268 C130 190 190 300 268 200 C312 142 350 168 380 120" fill="none" stroke="url(#g1)" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M212 54 c-15 0-26 12-26 27 0 14 11 25 26 25 14 0 25-11 25-25 0-15-11-27-25-27z" fill="url(#g2)"/>
+          <path d="M212 110 c-30 14-52 46-58 84-3 20 2 38 14 52 8 10 24 12 34 4 9-8 10-22 2-31-9-11-12-24-8-37 5-17 18-30 34-36 14-5 22-19 20-34-2-18-18-31-38-2z" fill="url(#g1)" opacity=".95"/>
+          <path d="M150 236 c22 6 44 8 68 6" fill="none" stroke="#f8f1f6" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>
+          <circle cx="316" cy="76" r="7" fill="#f2b34b"/>
+          <circle cx="98" cy="112" r="4.5" fill="#e86f51"/>
+          <circle cx="340" cy="230" r="5.5" fill="#f8f1f6" opacity=".55"/>
+        </svg>
+        <div class="art-caption">节拍与呼吸决定动作质感</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 领域概览 -->
+  <section class="section" id="overview" aria-labelledby="overviewTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">领域概览</span>
+        <h2 id="overviewTitle">五个主流舞种的门槛与训练周期</h2>
+        <p class="lead">不同舞种对身体条件、课时密度与考级路径的要求差别很大。下表按2026年秋季馆内实际排课整理，价格与时段以各馆公示为准。</p>
+      </div>
+      <div class="overview-grid">
+        <div class="ov-card wide">
+          <h3>爵士舞入门：8节课能站上开口位</h3>
+          <p>多数爵士舞入门班按每周2次、每次90分钟安排，前4节热身与律动分解，第5节起进入齐舞段落。零基础学员通常在8—10节课后可完成一段45秒编舞。对膝盖旧伤者，教练普遍建议先做单腿稳定评估再上高频弹跳。</p>
+        </div>
+        <div class="ov-card">
+          <span class="num">90<small>分钟</small></span>
+          <h3>标准课时</h3>
+          <p>芭蕾形体与古典舞身韵多为90分钟；街舞breaking与hiphop常见60分钟，因强度高、间歇长。</p>
+        </div>
+        <div class="ov-card">
+          <span class="num">3<small>级</small></span>
+          <h3>考级起点</h3>
+          <p>中国古典舞身韵考级常从三级报起，需提交前两级动作视频或由任课教师出具课时证明。</p>
+        </div>
+        <div class="ov-card">
+          <h3>拉丁舞双人课与单人课的取舍</h3>
+          <p>伦巴、恰恰的双人课需要固定舞伴，单人课侧重胯位与重心转换。没有舞伴也能先上单人课，用镜子做反向修正。</p>
+        </div>
+        <div class="ov-card">
+          <h3>芭蕾形体的软开要求</h3>
+          <p>成人班不强制劈叉，但要求能完成坐位体前屈超过脚尖15厘米，否则把杆组合容易代偿到腰椎。</p>
+        </div>
+        <div class="ov-card">
+          <h3>街舞场馆的地胶差异</h3>
+          <p>breaking需要更厚的地胶与护具，hiphop地板动作少，普通木地板即可。报名前问清是否有3厘米以上缓冲层。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 精选内容推荐 -->
+  <section class="section" id="picks" aria-labelledby="picksTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">精选内容推荐</span>
+        <h2 id="picksTitle">本周值得报名的五门课与三份资料</h2>
+        <p class="lead">从38条在架课程里挑出的五个班次，附同班次常见问题；资料部分可以直接对照自己的课时表使用。</p>
+      </div>
+      <div class="pick-grid">
+        <article class="pick-card">
+          <img class="thumb" src="https://picsum.photos/seed/yiwuba-jazz01/560/315" width="560" height="315" loading="lazy" alt="爵士舞排练厅内学员对镜练习律动">
+          <div class="pick-body">
+            <span class="pick-tag">爵士舞入门</span>
+            <h3>爵士舞零基础第9期（周一、周四 19:30）</h3>
+            <p>主教练林岚，8节课完成一段45秒编舞。第9期已满18人，候补名单余6位；第10期开课日定在11月16日。</p>
+            <div class="pick-meta"><span>¥880 / 8节</span><span>剩6个候补</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <img class="thumb" src="https://picsum.photos/seed/yiwuba-classic02/560/315" width="560" height="315" loading="lazy" alt="中国古典舞身韵课学员练习提沉与呼吸">
+          <div class="pick-body">
+            <span class="pick-tag">中国古典舞</span>
+            <h3>身韵提沉与冲靠组合精讲</h3>
+            <p>拆解提、沉、冲、靠四个元素在三级考级组合里的衔接。前两节纯地面呼吸，第三节才站起。</p>
+            <div class="pick-meta"><span>¥620 / 6节</span><span>周三 20:00</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <img class="thumb" src="https://picsum.photos/seed/yiwuba-hiphop03/560/315" width="560" height="315" loading="lazy" alt="街舞教室中学员做hiphop基础bounce训练">
+          <div class="pick-body">
+            <span class="pick-tag">街舞</span>
+            <h3>Hiphop基础律动：bounce 与 rock 分离训练</h3>
+            <p>60分钟短课，专门解决"上身抖、下身不动"的常见问题。教练会在第3节录视频回看。</p>
+            <div class="pick-meta"><span>¥450 / 6节</span><span>周六 15:00</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <img class="thumb" src="https://picsum.photos/seed/yiwuba-ballet04/560/315" width="560" height="315" loading="lazy" alt="芭蕾形体课把杆组合练习腿部外开控制">
+          <div class="pick-body">
+            <span class="pick-tag">芭蕾形体</span>
+            <h3>成人芭蕾形体：把杆外开与核心控制</h3>
+            <p>把杆组合为主，不要求软开达标。报名前测坐位体前屈，低于脚尖15厘米者建议先上两节激活课。</p>
+            <div class="pick-meta"><span>¥720 / 8节</span><span>周二 19:00</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <img class="thumb" src="https://picsum.photos/seed/yiwuba-latin05/560/315" width="560" height="315" loading="lazy" alt="拉丁舞单人课练习伦巴胯位与重心转换">
+          <div class="pick-body">
+            <span class="pick-tag">拉丁舞</span>
+            <h3>伦巴单人基础：胯位与重心转换</h3>
+            <p>不绑舞伴，重点在胯位前后对比与音乐第2拍的落点。适合学过4拍基本步但胯不动的人。</p>
+            <div class="pick-meta"><span>¥560 / 6节</span><span>周日 10:30</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <img class="thumb" src="https://picsum.photos/seed/yiwuba-doc06/560/315" width="560" height="315" loading="lazy" alt="排练厅中打印的课时安排表与训练日志">
+          <div class="pick-body">
+            <span class="pick-tag">训练资料</span>
+            <h3>三份可打印训练资料</h3>
+            <p>每周三次训练节奏表、热身与冷身动作清单、软开度自测记录。已按11月排课时间调整。</p>
+            <div class="pick-meta"><span>免费下载</span><span>11月7日更新</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新更新 -->
+  <section class="section" id="latest" aria-labelledby="latestTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">最新更新</span>
+        <h2 id="latestTitle">最近六天的排课与规则变化</h2>
+        <p class="lead">只记录可以核对到具体班次、文件或动作编号的变更。</p>
+      </div>
+      <ul class="update-list">
+        <li><time datetime="2026-11-07">11月7日</time><span class="u-title"><a href="/#picks">爵士舞第9期开课名单公布，候补顺延至第10期</a></span><span class="u-type">排课</span></li>
+        <li><time datetime="2026-11-07">11月7日</time><span class="u-title"><a href="/#analysis">古典舞身韵三级动作清单补入"旁提"与"云手"衔接说明</a></span><span class="u-type">规则</span></li>
+        <li><time datetime="2026-11-06">11月6日</time><span class="u-title"><a href="/#guide">滨江排练厅换地胶，breaking班本周临时移至二层木地板教室</a></span><span class="u-type">场馆</span></li>
+        <li><time datetime="2026-11-05">11月5日</time><span class="u-title"><a href="/#channels">拉丁舞单人课新增周日10:30时段，双人课暂停一周</a></span><span class="u-type">排课</span></li>
+        <li><time datetime="2026-11-03">11月3日</time><span class="u-title"><a href="/#analysis">芭蕾形体把杆组合加入踝关节稳定性筛查</a></span><span class="u-type">教学</span></li>
+        <li><time datetime="2026-11-02">11月2日</time><span class="u-title"><a href="/#faq">退款与转班规则更新：开课前72小时可全额转班一次</a></span><span class="u-type">规则</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="section" id="channels" aria-labelledby="channelsTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">分类入口</span>
+        <h2 id="channelsTitle">按舞种、目标与场地找内容</h2>
+        <p class="lead">括号内为当前收录条目数，每周核对一次。</p>
+      </div>
+      <div class="tag-index">
+        <a href="/#picks"><strong>爵士舞入门</strong><small>（12）</small></a>
+        <a href="/#picks"><strong>中国古典舞身韵</strong><small>（9）</small></a>
+        <a href="/#picks"><strong>Hiphop基础律动</strong><small>（7）</small></a>
+        <a href="/#picks"><strong>Breaking地板动作</strong><small>（5）</small></a>
+        <a href="/#picks"><strong>成人芭蕾形体</strong><small>（8）</small></a>
+        <a href="/#picks"><strong>伦巴单人基础</strong><small>（6）</small></a>
+        <a href="/#picks"><strong>恰恰双人配合</strong><small>（4）</small></a>
+        <a href="/#guide"><strong>软开度自测</strong><small>（3）</small></a>
+        <a href="/#analysis"><strong>考级报名流程</strong><small>（5）</small></a>
+        <a href="/#faq"><strong>课时卡退转规则</strong><small>（4）</small></a>
+        <a href="/#faq"><strong>膝盖与踝关节保护</strong><small>（6）</small></a>
+        <a href="/#guide"><strong>场馆实地考察清单</strong><small>（2）</small></a>
+        <a href="/#picks"><strong>每周三次训练安排</strong><small>（3）</small></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析 -->
+  <section class="section" id="analysis" aria-labelledby="analysisTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">深度解析</span>
+        <h2 id="analysisTitle">为什么"每周两次课"比"每周四次课"更容易坚持到第12周</h2>
+        <p class="lead">这一结论来自馆内2026年9月至11月的出勤记录，样本为112名连续报名8节以上的成人学员。判断可被核对，也可被反驳。</p>
+      </div>
+      <div class="analysis">
+        <article class="article">
+          <h3>出勤数据：每周两次的完成率为91%，每周四次的完成率为63%</h3>
+          <p>把9月1日至11月7日的签到表按学员每周排课次数分组：每周2次共54人，完成全部8节约49人；每周4次共31人，完成率降到约63%。问题不在意志力，而在肌肉酸痛与工作时间的冲突。<strong>每周4次的班级，第3周开始缺勤集中在周二与周四晚，恰好是最容易加班的两天。</strong></p>
+          <p>这组数据可以反驳"练得越多进步越快"的说法。真正影响第12周还在跳的因素，是恢复时间是否被排进课表。</p>
+
+          <h3>对照：爵士舞与古典舞的疲劳累积方式不同</h3>
+          <p>爵士舞以弹跳与胸部律动为主，连续两次课后股四头肌与小腿的延迟性酸痛通常在48小时达到峰值。中国古典舞身韵以地面呼吸与脊柱控制为主，当晚就能练，但对呼吸节奏的专注要求更高。</p>
+          <table class="compare-table">
+            <caption>两种舞种的单次训练负荷对照（2026年10月馆内记录）</caption>
+            <thead><tr><th>项目</th><th>爵士舞入门</th><th>中国古典舞身韵</th></tr></thead>
+            <tbody>
+              <tr><td>单次时长</td><td>90分钟</td><td>90分钟</td></tr>
+              <tr><td>心率区间</td><td>中高，持续起伏</td><td>中低，间歇拉伸</td></tr>
+              <tr><td>次日酸痛部位</td><td>大腿前侧、小腿</td><td>腰背、髋部</td></tr>
+              <tr><td>建议间隔</td><td>48小时</td><td>24小时可续</td></tr>
+              <tr><td>第8节常见成果</td><td>一段45秒编舞</td><td>三级组合前两段</td></tr>
+            </tbody>
+          </table>
+          <p>所以两类舞种可以混排：周二爵士、周四身韵，中间隔两天，既不堆积酸痛，也不丢节奏。</p>
+
+          <h3>争议点：教练主张与学员体感的差异</h3>
+          <p>馆内爵士舞教练林岚在10月28日的课后沟通里说，密集上课能快速形成肌肉记忆。但学员签到数据显示，每周4次的班级在第三周后到课率下滑。这里的差异需要分开看：<strong>教练说的是单周记忆形成速度，学员数据反映的是连续12周坚持率，两者不是同一件事。</strong>任何一方都不能单独作为排课依据。</p>
+          <div class="pull-quote">
+            "第4次课膝盖就开始发紧，后来减到每周两次，反而把一段编舞跳完整了。"
+            <cite>—— 学员周敏，爵士舞第7期，10月30日课后记录</cite>
+          </div>
+
+          <h3>把判断拆成可核对的三项：时间、恢复、目标</h3>
+          <p>第一，时间是硬约束。每周能稳定到场的时间块若不足两个，密集排课的完成率必然下降。第二，恢复要能被感知：如果第二天上下楼梯有刺痛，间隔就应拉到48小时。第三，目标决定节奏：以考级为目标的身韵课需要每周至少两次；以开心出汗为准的爵士课，每周一次加一次自主复习也够。</p>
+          <p>三项中任意一项不满足，减少每周次数比更换舞种更有效。这条建议在11月的第9期候补学员里做了小范围验证，候补转正后按每周两次排课的人，两周后仍全部在册。</p>
+        </article>
+        <aside class="checklist" aria-labelledby="checklistTitle">
+          <h3 id="checklistTitle">排课前自测清单</h3>
+          <ol>
+            <li><b>时间块：</b>写下未来四周能稳定空出的两个晚上，是否与班级时段重合。</li>
+            <li><b>恢复信号：</b>上一次训练后第二天上下楼梯是否刺痛，刺痛则隔48小时。</li>
+            <li><b>目标层级：</b>考级需要每周至少两次；出汗型目标每周一次加自主复习。</li>
+            <li><b>通勤：</b>单程是否超过45分钟，超过则优先选周末班。</li>
+            <li><b>预算：</b>8节课的支出是否影响其他安排，超过月收入8%建议先报4节。</li>
+            <li><b>场馆：</b>地胶是否有3厘米以上缓冲层，问清是否可试课。</li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 体验指南 -->
+  <section class="section" id="guide" aria-labelledby="guideTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">体验指南</span>
+        <h2 id="guideTitle">第一次去舞蹈馆，六个步骤走完再交钱</h2>
+        <p class="lead">从预约试课到签课时卡，顺序反过来最容易踩坑。按下面六步走，能省下至少一次转班的手续麻烦。</p>
+      </div>
+      <ol class="steps">
+        <li><b>先看排课表，不只看环境照</b><span>要求对方发最近两周的完整排课表，看目标舞种是否每周稳定出现两次。只排一次的班级很难形成节奏。</span></li>
+        <li><b>约一节正式课，不约演示课</b><span>演示课教练会挑最好的状态。正式课能看到中途休息、纠错方式与学员真实水平。</span></li>
+        <li><b>进教室先踩地胶</b><span>breaking与爵士舞的弹跳对地面缓冲要求高。脚踩上去有回弹、不留明显凹陷即可。</span></li>
+        <li><b>问软开评估怎么做</b><span>成人班若直接要求劈叉，先问是否有评估与替代动作。坐位体前屈低于脚尖15厘米的人要当心代偿。</span></li>
+        <li><b>确认退转规则写成文字</b><span>11月2日起多数馆执行开课前72小时可全额转班一次。口头承诺不算，要看到书面条款。</span></li>
+        <li><b>先报4节，再加课</b><span>4节足以判断教练风格与班级氛围。第4节后再签8节或12节课时卡，风险更小。</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 用户互动：训练日志打卡 -->
+  <section class="section" id="log" aria-labelledby="logTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">互动 · 训练日志</span>
+        <h2 id="logTitle">本周打卡：你练了几个八拍</h2>
+        <p class="lead">按舞种记录本周练习次数与自主复习时长，数据仅作参考。下面的计数为11月3日至11月7日的提交结果。</p>
+      </div>
+      <div class="overview-grid">
+        <div class="ov-card"><span class="num">87<small>人</small></span><h3>爵士舞本周打卡</h3><p>其中52人提交了自主复习时长，平均每次18分钟。</p></div>
+        <div class="ov-card"><span class="num">41<small>人</small></span><h3>身韵本周打卡</h3><p>地面呼吸练习占提交内容的七成，站姿组合偏少。</p></div>
+        <div class="ov-card wide"><h3>打卡怎么写才有用</h3><p>写清舞种、练习时长、卡住的动作编号与当时的体感。比如"11月6日，爵士舞第9期，复习副歌8拍×4，第3拍转胸卡住"。只写"今天练了"的记录，两周后回看几乎没有参考价值。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" aria-labelledby="faqTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">常见问题</span>
+        <h2 id="faqTitle">报名前最常问的七个问题</h2>
+        <p class="lead">答案以馆内2026年11月执行的条款与动作清单为准。</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>零基础能直接上爵士舞入门吗？</summary>
+          <div class="faq-body">爵士舞入门班本身就是为零基础设计，前4节从热身、律动分解开始，不要求劈叉或下腰。需要留意的是膝盖旧伤：弹跳动作较多，报名前做一次单腿稳定评估更稳妥。第9期有3名学员因膝部不适转到身韵班。</div>
+        </details>
+        <details>
+          <summary>中国古典舞身韵考级从几级开始报？</summary>
+          <div class="faq-body">身韵考级常从三级报起，需提交前两级的动作视频，或由任课教师出具课时证明。三级考核包含提、沉、冲、靠、含、腆、移七个元素，2026年11月补入"旁提"与"云手"的衔接说明。单独练组合而不练呼吸，评委通常会在第一段就扣分。</div>
+        </details>
+        <details>
+          <summary>成人芭蕾形体不软开能上吗？</summary>
+          <div class="faq-body">可以。成人班不强制劈叉，但把杆组合要求基本的踝关节稳定性与髋部外开意识。自测方法：坐位体前屈能否超过脚尖15厘米；单腿站立闭眼能否维持10秒。两项任一不达标，建议先上两节激活课再进常规班。</div>
+        </details>
+        <details>
+          <summary>没有舞伴可以学拉丁舞吗？</summary>
+          <div class="faq-body">可以。伦巴与恰恰都有单人课，重点是胯位前后对比和重心转换。单人课用镜子做反向修正，比双人课更容易看清自己的胯。周日的单人基础课11月新增10:30时段，双人课暂停一周。</div>
+        </details>
+        <details>
+          <summary>课时卡开课后能退或转吗？</summary>
+          <div class="faq-body">11月2日起执行的开课前72小时规则：可全额转班一次，退款需扣除已上课时与报名手续费。开课后转班按剩余课时折算，不足4节的部分不退。书面条款在报名页面可查，口头承诺不作依据。</div>
+        </details>
+        <details>
+          <summary>一周练几次比较合适？</summary>
+          <div class="faq-body">成人零基础从每周两次起步，中间至少隔一天。爵士舞与breaking这类弹跳多的舞种，两次课之间隔48小时；身韵与芭蕾形体可隔24小时。每周四次以上的班级在第3周起出勤率明显下降，详见深度解析部分的出勤记录。</div>
+        </details>
+        <details>
+          <summary>练完膝盖疼怎么办？</summary>
+          <div class="faq-body">先区分是肌肉酸痛还是关节刺痛。上下楼梯有刺痛时应停止弹跳类动作48小时，改为地面核心与踝关节活动。若疼痛持续超过一周，需就医而不是换舞种硬撑。11月6日滨江排练厅换地胶期间，breaking班临时移到二层木地板教室，弹跳练习减半。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评论 -->
+  <section class="section" id="reviews" aria-labelledby="reviewsTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">用户评论</span>
+        <h2 id="reviewsTitle">六条真实语气，优缺点都写</h2>
+        <p class="lead">来自10月下旬至11月初的课后记录，未做删改，仅隐去联系方式。</p>
+      </div>
+      <div class="comments">
+        <div class="comment">
+          <span class="stars" aria-label="评分5星">★★★★★</span>
+          <p>爵士舞第7期林岚教练会把副歌第3拍的转胸拆成三拍教，我这种上身僵的人第一次跟上了。候补等了五天才进第9期，值得。</p>
+          <div class="who"><span class="avatar">周</span><span><span class="name">周敏</span><span class="ctx">爵士舞第7期 · 11月7日</span></span></div>
+        </div>
+        <div class="comment">
+          <span class="stars" aria-label="评分3星">★★★☆☆</span>
+          <p>身韵三级组合的"旁提"衔接说明11月7日才补上，前两周上课时教练讲得含糊，学员之间互相猜。现在清楚了，但时间上偏晚。</p>
+          <div class="who"><span class="avatar">陈</span><span><span class="name">陈露</span><span class="ctx">身韵三级班 · 11月7日</span></span></div>
+        </div>
+        <div class="comment">
+          <span class="stars" aria-label="评分2星">★★☆☆☆</span>
+          <p>滨江排练厅11月6日换地胶，breaking班临时到二层木地板，落地缓冲明显不够。教练把地板动作全换成站姿，效果打折，希望早点换回来。</p>
+          <div class="who"><span class="avatar">吴</span><span><span class="name">吴骁</span><span class="ctx">Breaking基础 · 11月6日</span></span></div>
+        </div>
+        <div class="comment">
+          <span class="stars" aria-label="评分4星">★★★★☆</span>
+          <p>芭蕾形体把杆的外开控制讲得细，踝关节筛查是新加的，做完才发现自己左脚稳定性差。就是90分钟课偏长，最后10分钟注意力散了。</p>
+          <div class="who"><span class="avatar">何</span><span><span class="name">何佳</span><span class="ctx">芭蕾形体周三班 · 11月3日</span></span></div>
+        </div>
+        <div class="comment">
+          <span class="stars" aria-label="评分4星">★★★★☆</span>
+          <p>伦巴单人课不绑舞伴这点省事。周日10:30新时段刚好避开加班。胯位前后对比用镜子练两节就有效，就是练完髋部有点紧。</p>
+          <div class="who"><span class="avatar">徐</span><span><span class="name">徐倩</span><span class="ctx">伦巴单人基础 · 11月5日</span></span></div>
+        </div>
+        <div class="comment">
+          <span class="stars" aria-label="评分3星">★★★☆☆</span>
+          <p>Hiphop基础律动第3节录视频回看这个安排很实用，看出我只有上身抖。不过60分钟课热身就占15分钟，实际练动作的时间偏短，想加练得自己找时间。</p>
+          <div class="who"><span class="avatar">罗</span><span><span class="name">罗程</span><span class="ctx">Hiphop基础 · 11月4日</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="section" id="news" aria-labelledby="newsTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">相关资讯</span>
+        <h2 id="newsTitle">四条排课与规则动态</h2>
+        <p class="lead">每条对应一个具体班次或文件，不重复其他板块已述内容。</p>
+      </div>
+      <div class="news-grid">
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/yiwuba-news11/224/168" width="224" height="168" loading="lazy" alt="排练厅公告栏张贴的11月排课调整通知">
+          <div>
+            <h3>11月16日开设爵士舞第10期</h3>
+            <p>承接第9期候补名单，共20个名额，周一、周四19:30，林岚主讲。</p>
+            <time datetime="2026-11-07">11月7日</time>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/yiwuba-news12/224/168" width="224" height="168" loading="lazy" alt="身韵考级动作清单打印稿与铅笔标注">
+          <div>
+            <h3>身韵考级三级动作清单修订</h3>
+            <p>旁提与云手衔接处增加两拍过渡说明，11月7日版替换旧版。</p>
+            <time datetime="2026-11-07">11月7日</time>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/yiwuba-news13/224/168" width="224" height="168" loading="lazy" alt="排练厅地胶更换施工现场">
+          <div>
+            <h3>滨江排练厅地胶更换</h3>
+            <p>11月6日起施工两天，breaking班临时移至二层木地板教室。</p>
+            <time datetime="2026-11-06">11月6日</time>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/yiwuba-news14/224/168" width="224" height="168" loading="lazy" alt="报名页面上的退转规则条款截图">
+          <div>
+            <h3>课时卡退转规则11月2日起执行</h3>
+            <p>开课前72小时可全额转班一次，退款扣手续费，条款已书面化。</p>
+            <time datetime="2026-11-02">11月2日</time>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 补充板块：时间线 -->
+  <section class="section" id="timeline" aria-labelledby="timelineTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">补充 · 入学时间线</span>
+        <h2 id="timelineTitle">一名零基础学员从咨询到第8节的四周</h2>
+        <p class="lead">以爵士舞第9期学员的排课记录整理，可对照自己的节奏。</p>
+      </div>
+      <ol class="timeline">
+        <li><time datetime="2026-10-12">10月12日</time><b>咨询并试课</b><span>上了一节周四19:30的正式课，课后问清地胶厚度与退转条款。</span></li>
+        <li><time datetime="2026-10-15">10月15日</time><b>报名4节体验卡</b><span>先报4节，观察教练纠错方式与班级人数。</span></li>
+        <li><time datetime="2026-10-22">10月22日</time><b>加报第9期8节</b><span>4节后确认节奏合适，续报8节，进入候补第3位。</span></li>
+        <li><time datetime="2026-10-29">10月29日</time><b>第9期第1节</b><span>热身15分钟，律动分解两个八拍，课后大腿前侧酸痛两天。</span></li>
+        <li><time datetime="2026-11-05">11月5日</time><b>第9期第3节</b><span>副歌第3拍转胸卡住，教练单独拆成三拍示范。</span></li>
+        <li><time datetime="2026-11-07">11月7日</time><b>开课名单确认</b><span>第9期满18人，候补顺延至第10期，11月16日开课。</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 相关推荐 -->
+  <section class="section" id="reco" aria-labelledby="recoTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">相关推荐</span>
+        <h2 id="recoTitle">按你正在练的动作找下一篇</h2>
+        <p class="lead">标签直接对应具体舞种、动作或规则条目。</p>
+      </div>
+      <div class="reco-tags">
+        <a href="/#picks">爵士舞第10期候补</a>
+        <a href="/#analysis">每周两次排课法</a>
+        <a href="/#faq">身韵考级三级从几级报</a>
+        <a href="/#faq">芭蕾形体软开自测</a>
+        <a href="/#picks">Hiphop bounce分离训练</a>
+        <a href="/#faq">课时卡72小时转班</a>
+        <a href="/#guide">breakin地胶厚度怎么问</a>
+        <a href="/#picks">伦巴单人胯位练习</a>
+        <a href="/#faq">练完膝盖疼怎么办</a>
+        <a href="/#log">训练日志怎么写</a>
+        <a href="/#timeline">零基础四周入学时间线</a>
+        <a href="/#analysis">教练主张与学员数据差异</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <rect width="64" height="64" rx="14" fill="#f2b34b"/>
+            <path d="M20 46c6-2 9-8 9-16 0-6 3-9 7-9 3 0 5 2 5 5 0 6-7 8-7 15 0 5 3 8 8 8" fill="none" stroke="#2b1b3d" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="47" cy="16" r="4" fill="#e86f51"/>
+          </svg>
+          <span class="footer-brand-name">艺舞吧</span>
+        </div>
+        <p class="footer-desc">把舞种门槛、排课节奏与场馆细节摊开写，让每一次报名都有可核对的依据。</p>
+      </div>
+      <div class="footer-col">
+        <h4>舞种频道</h4>
+        <ul>
+          <li><a href="/#picks">爵士舞入门</a></li>
+          <li><a href="/#picks">中国古典舞身韵</a></li>
+          <li><a href="/#picks">Hiphop基础律动</a></li>
+          <li><a href="/#picks">成人芭蕾形体</a></li>
+          <li><a href="/#picks">伦巴单人基础</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>训练与规则</h4>
+        <ul>
+          <li><a href="/#analysis">每周排课解析</a></li>
+          <li><a href="/#guide">首次试课六步</a></li>
+          <li><a href="/#faq">考级与软开问答</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <ul>
+          <li><a href="/#log">训练日志打卡</a></li>
+          <li><a href="/#reviews">学员评论</a></li>
+          <li><a href="/#timeline">四周入学时间线</a></li>
+          <li><a href="/#reco">相关推荐</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">
+      页面所列班次、价格、名单与动作清单为示例数据，用于说明舞种排课与规则结构；实际以各馆公示与报名页面为准。出勤记录样本取自2026年9月1日至11月7日的馆内签到表，共112名成人学员。页脚更新时间2026年11月8日，对应正文可核对更新项为：爵士舞第9期开课名单、身韵三级动作清单修订、滨江排练厅地胶更换。
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 艺舞吧 · 面向成人舞蹈学习者的舞种与排课参考</span>
+      <span>内容核对日：2026-11-08</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">
+  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V4M4 7.5L8 3.5l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  if(navToggle && mainNav){
+    navToggle.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.matchMedia('(max-width:768px)').matches){
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* 本地搜索 */
+  var searchInput = document.getElementById('siteSearch');
+  var searchBtn = document.getElementById('searchBtn');
+  var searchResult = document.getElementById('searchResult');
+
+  var index = [];
+  document.querySelectorAll('main h2[id], main h3, .pick-card h3, .news-item h3, summary, .tag-index a, .reco-tags a, .timeline b').forEach(function(el){
+    var text = (el.textContent || '').replace(/\s+/g,' ').trim();
+    if(!text) return;
+    var host = el.closest('section');
+    index.push({ text: text, title: text, id: host ? host.id : '' });
+  });
+
+  function runSearch(){
+    var q = (searchInput.value || '').trim();
+    if(!q){
+      searchResult.classList.remove('show','empty');
+      searchResult.innerHTML = '';
+      return;
+    }
+    var hits = index.filter(function(item){
+      return item.title.indexOf(q) !== -1;
+    }).slice(0,6);
+    searchResult.classList.add('show');
+    if(hits.length === 0){
+      searchResult.classList.add('empty');
+      searchResult.textContent = '没有找到「' + q + '」相关内容，试试舞种名、课时或退转规则。';
+      return;
+    }
+    searchResult.classList.remove('empty');
+    searchResult.innerHTML = '找到 ' + hits.length + ' 条：' + hits.map(function(h){
+      return '<a href="/#' + (h.id || 'top') + '" style="color:#2f7f74;border-bottom:1px solid rgba(47,127,116,.4)">' + h.title + '</a>';
+    }).join(' · ');
+  }
+  if(searchBtn && searchInput){
+    searchBtn.addEventListener('click', runSearch);
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); runSearch(); }
+    });
+    searchInput.addEventListener('input', function(){
+      if(!searchInput.value.trim()){
+        searchResult.classList.remove('show','empty');
+        searchResult.innerHTML = '';
+      }
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function onScroll(){
+    if(!toTop) return;
+    if(window.pageYOffset > 520){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      var brand = document.querySelector('.brand');
+      if(brand) brand.focus({ preventScroll: true });
+    });
+  }
+
+  /* 侧栏/导航滚动高亮 */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.main-nav a'));
+  var sections = navLinks.map(function(a){
+    var id = (a.getAttribute('href') || '').replace('/#','');
+    return id ? document.getElementById(id) : null;
+  });
+  function highlight(){
+    var pos = window.pageYOffset + 160;
+    var activeIndex = -1;
+    sections.forEach(function(sec, i){
+      if(sec && sec.offsetTop <= pos) activeIndex = i;
+    });
+    navLinks.forEach(function(a, i){
+      if(i === activeIndex){
+        a.style.background = '#f0e8e2';
+        a.style.color = '#2b1b3d';
+      } else {
+        a.style.background = '';
+        a.style.color = '';
+      }
+    });
+  }
+  window.addEventListener('scroll', highlight, { passive: true });
+  highlight();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "艺舞吧",
+  "identifier": "yiwuba",
+  "inLanguage": "zh-CN",
+  "description": "成人舞蹈学习者的舞种选择与排课参考，覆盖爵士舞、中国古典舞、街舞、芭蕾形体、拉丁舞的课程强度、规则与场馆考察方法。",
+  "dateModified": "2026-11-08"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "零基础能直接上爵士舞入门吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "爵士舞入门班为零基础设计，前4节从热身与律动分解开始，不要求劈叉或下腰。膝盖旧伤者建议先做单腿稳定评估，第9期有3名学员因膝部不适转到身韵班。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "中国古典舞身韵考级从几级开始报？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "身韵考级常从三级报起，需提交前两级动作视频或由任课教师出具课时证明。三级考核包含提、沉、冲、靠、含、腆、移七个元素，2026年11月补入旁提与云手的衔接说明。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "成人芭蕾形体不软开能上吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。成人班不强制劈叉，但要求踝关节稳定性与髋部外开意识。坐位体前屈超过脚尖15厘米、单腿闭眼站立维持10秒为参考标准，任一不达标建议先上两节激活课。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "没有舞伴可以学拉丁舞吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。伦巴与恰恰都有单人课，重点在胯位前后对比与重心转换。周日单人基础课11月新增10:30时段，双人课暂停一周。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "课时卡开课后能退或转吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11月2日起执行开课前72小时可全额转班一次的规则，退款需扣除已上课时与报名手续费。开课后转班按剩余课时折算，不足4节的部分不退。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "一周练几次比较合适？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "成人零基础从每周两次起步，中间至少隔一天。爵士舞与breaking这类弹跳多的舞种两次课间隔48小时，身韵与芭蕾形体可隔24小时。每周四次以上的班级第3周起出勤率明显下降。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "练完膝盖疼怎么办？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "先区分肌肉酸痛与关节刺痛。上下楼梯有刺痛时停止弹跳类动作48小时，改为地面核心与踝关节活动；疼痛持续超过一周需就医，不要换舞种硬撑。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+  </html>
